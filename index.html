@@ -493,6 +493,46 @@
             color: var(--accent);
         }
 
+        /* Language toggle */
+        .lang-toggle {
+            display: flex;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-left: auto;
+            align-self: flex-start;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.3s forwards;
+        }
+
+        .lang-btn {
+            padding: 8px 14px;
+            font-size: 12px;
+            font-family: inherit;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text);
+        }
+
+        .lang-btn.active {
+            background: var(--accent-dim);
+            color: var(--accent);
+        }
+
+        [data-lang-zh] { display: none; }
+        body.zh [data-lang-en] { display: none; }
+        body.zh [data-lang-zh] { display: block; }
+        body.zh span[data-lang-zh] { display: inline; }
+        body.zh .job-title[data-lang-zh] { display: inline; }
+        body.zh .degree[data-lang-zh] { display: block; }
+
         /* Cursor glow effect */
         .cursor-glow {
             position: fixed;
@@ -512,7 +552,7 @@
 
         /* Print styles */
         @media print {
-            .bg-grid, .orb, .cursor-glow { display: none; }
+            .bg-grid, .orb, .cursor-glow, .lang-toggle { display: none; }
             body { background: #fff; color: #000; }
             .container { padding: 20px 0; }
             section { opacity: 1; transform: none; }
@@ -526,7 +566,7 @@
         /* Responsive */
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
-            .container { padding: 60px 20px 80px; }
+            .container { padding: 70px 20px 80px; }
             .header-top { flex-direction: column; align-items: center; text-align: center; }
             .profile-photo { width: 100px; height: 100px; }
             .header-info { width: 100%; }
@@ -534,6 +574,9 @@
             .timeline { padding-left: 20px; }
             .job::before { left: -25px; }
             .orb { opacity: 0.2; }
+            .lang-toggle { position: absolute; top: 0; right: 0; }
+            .lang-btn { padding: 6px 10px; font-size: 11px; }
+            .header-top { position: relative; }
         }
     </style>
 </head>
@@ -549,46 +592,65 @@
                 <img src="profile_photo.jpg" alt="James Li" class="profile-photo">
                 <div class="header-info">
                     <div class="name-wrapper">
-                        <h1>James Li</h1>
+                        <h1 data-lang-en>James Li</h1>
+                        <h1 data-lang-zh>李政勳</h1>
                     </div>
-                    <div class="tagline">Senior Backend Engineer</div>
+                    <div class="tagline" data-lang-en>Senior Backend Engineer</div>
+                    <div class="tagline" data-lang-zh>資深後端工程師</div>
                     <div class="email">
                         <span>//</span>
                         <a href="mailto:jamesli@csie.io">jamesli@csie.io</a>
                     </div>
                 </div>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="zh">中文</button>
+                </div>
             </div>
-            <p class="summary">
+            <p class="summary" data-lang-en>
                 Senior Backend engineer proficient in Python development and system performance optimization, with experience in Kubernetes and Azure. Skilled at rapidly prototyping new technologies to evaluate feasibility and deliver solutions.
             </p>
-            <p class="summary">
+            <p class="summary" data-lang-en>
                 Leverages modern AI-assisted tooling to accelerate development while maintaining code quality and system reliability.
+            </p>
+            <p class="summary" data-lang-zh>
+                資深後端工程師，擅長 Python 開發與系統效能優化，具備 Kubernetes 及 Azure 實戰經驗。善於快速原型驗證新技術的可行性並交付解決方案。
+            </p>
+            <p class="summary" data-lang-zh>
+                運用現代 AI 輔助工具加速開發流程，同時確保程式碼品質與系統穩定性。
             </p>
         </header>
 
         <section data-animate>
             <div class="section-header">
-                <span class="section-title">Education</span>
+                <span class="section-title" data-lang-en>Education</span>
+                <span class="section-title" data-lang-zh>學歷</span>
                 <span class="section-line"></span>
             </div>
             <div class="education-card">
-                <div class="school">National Chung Cheng University</div>
-                <div class="degree">M.S., Computer Science and Information Engineering <span>2018 – 2020</span></div>
-                <div class="degree">B.S., Computer Science and Information Engineering <span>2014 – 2018</span></div>
+                <div class="school" data-lang-en>National Chung Cheng University</div>
+                <div class="school" data-lang-zh>國立中正大學</div>
+                <div class="degree" data-lang-en>M.S., Computer Science and Information Engineering <span>2018 – 2020</span></div>
+                <div class="degree" data-lang-en>B.S., Computer Science and Information Engineering <span>2014 – 2018</span></div>
+                <div class="degree" data-lang-zh>資訊工程研究所碩士 <span>2018 – 2020</span></div>
+                <div class="degree" data-lang-zh>資訊工程學系學士 <span>2014 – 2018</span></div>
             </div>
         </section>
 
         <section data-animate>
             <div class="section-header">
-                <span class="section-title">Experience</span>
+                <span class="section-title" data-lang-en>Experience</span>
+                <span class="section-title" data-lang-zh>工作經歷</span>
                 <span class="section-line"></span>
             </div>
 
             <div class="timeline">
                 <div class="job">
                     <div class="job-header">
-                        <span class="job-title">Senior Software Engineer @ <a href="https://www.wiwynn.com" class="company" target="_blank" rel="noopener">Wiwynn</a></span>
-                        <span class="job-period">Oct 2022 – Present</span>
+                        <span class="job-title" data-lang-en>Senior Software Engineer @ <a href="https://www.wiwynn.com" class="company" target="_blank" rel="noopener">Wiwynn</a></span>
+                        <span class="job-title" data-lang-zh>資深軟體工程師 @ <a href="https://www.wiwynn.com" class="company" target="_blank" rel="noopener">緯穎科技</a></span>
+                        <span class="job-period" data-lang-en>Oct 2022 – Present</span>
+                        <span class="job-period" data-lang-zh>2022/10 – 迄今</span>
                     </div>
                     <div class="job-tech">
                         <span class="tech-tag">Python</span>
@@ -599,41 +661,57 @@
                         <span class="tech-tag">Kafka</span>
                         <span class="tech-tag">Omniverse</span>
                     </div>
-                    <ul class="job-details">
+                    <ul class="job-details" data-lang-en>
                         <li>Built automation systems and SaaS for worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability.</li>
                         <li>Engineered automated testing solutions for immersion cooling infrastructure—delivered multi-system coordination framework and established integration protocols with external partners.</li>
                         <li>Prototyped Omniverse-based digital twin for production line monitoring—delivered real-time 3D visualization pipeline and companion web interface for pre-production simulation.</li>
+                    </ul>
+                    <ul class="job-details" data-lang-zh>
+                        <li>建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性。</li>
+                        <li>開發浸沒式冷卻基礎設施的自動化測試方案——交付多系統協調框架，並建立與外部合作夥伴的整合協定。</li>
+                        <li>原型開發 Omniverse 數位孿生產線監控系統——實現即時 3D 視覺化管線與配套的網頁介面，用於量產前模擬驗證。</li>
                     </ul>
                 </div>
 
                 <div class="job">
                     <div class="job-header">
-                        <span class="job-title">Backend Engineer @ <a href="https://palup.ai" class="company" target="_blank" rel="noopener">PalUp</a></span>
-                        <span class="job-period">Jun 2022 – Sep 2022</span>
+                        <span class="job-title" data-lang-en>Backend Engineer @ <a href="https://palup.ai" class="company" target="_blank" rel="noopener">PalUp</a></span>
+                        <span class="job-title" data-lang-zh>後端工程師 @ <a href="https://palup.ai" class="company" target="_blank" rel="noopener">PalUp</a></span>
+                        <span class="job-period" data-lang-en>Jun 2022 – Sep 2022</span>
+                        <span class="job-period" data-lang-zh>2022/06 – 2022/09</span>
                     </div>
                     <div class="job-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">PyTorch</span>
                         <span class="tech-tag">Flask</span>
                     </div>
-                    <ul class="job-details">
+                    <ul class="job-details" data-lang-en>
                         <li>Developed image recognition system for automated end-to-end testing.</li>
+                    </ul>
+                    <ul class="job-details" data-lang-zh>
+                        <li>開發影像辨識系統，用於自動化端對端測試。</li>
                     </ul>
                 </div>
 
                 <div class="job">
                     <div class="job-header">
-                        <span class="job-title">R&D Engineer @ <a href="https://www.auo.com" class="company" target="_blank" rel="noopener">AUO</a></span>
-                        <span class="job-period">Aug 2020 – May 2022</span>
+                        <span class="job-title" data-lang-en>R&D Engineer @ <a href="https://www.auo.com" class="company" target="_blank" rel="noopener">AUO</a></span>
+                        <span class="job-title" data-lang-zh>研發替代役 @ <a href="https://www.auo.com" class="company" target="_blank" rel="noopener">友達光電</a></span>
+                        <span class="job-period" data-lang-en>Aug 2020 – May 2022</span>
+                        <span class="job-period" data-lang-zh>2020/08 – 2022/05</span>
                     </div>
                     <div class="job-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Flask</span>
                         <span class="tech-tag">jQuery</span>
                     </div>
-                    <ul class="job-details">
+                    <ul class="job-details" data-lang-en>
                         <li>Developed Machine Learning SaaS platform.</li>
                         <li>Managed servers and promoted DevOps culture and agile development practices.</li>
+                    </ul>
+                    <ul class="job-details" data-lang-zh>
+                        <li>開發機器學習 SaaS 平台。</li>
+                        <li>伺服器維運管理，推動 DevOps 與敏捷開發文化。</li>
                     </ul>
                 </div>
             </div>
@@ -641,17 +719,22 @@
 
         <section data-animate>
             <div class="section-header">
-                <span class="section-title">Earlier Roles</span>
+                <span class="section-title" data-lang-en>Earlier Roles</span>
+                <span class="section-title" data-lang-zh>早期經歷</span>
                 <span class="section-line"></span>
             </div>
             <div class="minor-roles">
                 <div class="minor-role">
-                    <div class="job-title">Software Engineer Intern @ <a href="https://www.cac.edu.tw/cacportal/index.php" class="company" target="_blank" rel="noopener">College Admissions Committee</a></div>
-                    <div class="job-period">Feb 2019 – Apr 2020</div>
+                    <div class="job-title" data-lang-en>Software Engineer Intern @ <a href="https://www.cac.edu.tw/cacportal/index.php" class="company" target="_blank" rel="noopener">College Admissions Committee</a></div>
+                    <div class="job-title" data-lang-zh>軟體工程實習生 @ <a href="https://www.cac.edu.tw/cacportal/index.php" class="company" target="_blank" rel="noopener">大學招生委員會聯合會</a></div>
+                    <div class="job-period" data-lang-en>Feb 2019 – Apr 2020</div>
+                    <div class="job-period" data-lang-zh>2019/02 – 2020/04</div>
                 </div>
                 <div class="minor-role">
-                    <div class="job-title">Software Engineer Intern @ <a href="https://www.awoo.ai" class="company" target="_blank" rel="noopener">awoo Intelligence</a></div>
-                    <div class="job-period">Feb 2017 – Sep 2017</div>
+                    <div class="job-title" data-lang-en>Software Engineer Intern @ <a href="https://www.awoo.ai" class="company" target="_blank" rel="noopener">awoo Intelligence</a></div>
+                    <div class="job-title" data-lang-zh>軟體工程實習生 @ <a href="https://www.awoo.ai" class="company" target="_blank" rel="noopener">awoo 阿物科技</a></div>
+                    <div class="job-period" data-lang-en>Feb 2017 – Sep 2017</div>
+                    <div class="job-period" data-lang-zh>2017/02 – 2017/09</div>
                 </div>
             </div>
         </section>
@@ -695,6 +778,21 @@
         }, { threshold: 0.1 });
 
         sections.forEach(section => observer.observe(section));
+
+        // Language toggle
+        const langBtns = document.querySelectorAll('.lang-btn');
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                if (lang === 'zh') {
+                    document.body.classList.add('zh');
+                } else {
+                    document.body.classList.remove('zh');
+                }
+            });
+        });
     </script>
 </body>
 </html>

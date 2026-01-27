@@ -1,4 +1,4 @@
-# 李宗翰 (James Li)
+# 李政勳 (James Li)
 - email: jamesli@csie.io
 ###### 資深後端工程師，擅長 Python 開發與系統效能優化，具備 Kubernetes 及 Azure 實戰經驗。善於快速原型驗證新技術的可行性並交付解決方案。
 ###### 運用現代 AI 輔助工具加速開發流程，同時確保程式碼品質與系統穩定性。
@@ -25,5 +25,5 @@
 - 伺服器維運管理。
 - 推動 DevOps 與敏捷開發文化。
 
-#### 軟體工程師實習生，[大學招生委員會聯合會](https://www.cac.edu.tw/cacportal/index.php)，2019/02 - 2020/04
-#### 軟體工程師實習生，[awoo 阿物科技](https://www.awoo.ai)，2017/02 - 2017/09
+#### 軟體工程實習生，[大學招生委員會聯合會](https://www.cac.edu.tw/cacportal/index.php)，2019/02 - 2020/04
+#### 軟體工程實習生，[awoo 阿物科技](https://www.awoo.ai)，2017/02 - 2017/09
