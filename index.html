@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Li - Senior Backend Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0f0f11;
+            --surface: #18181b;
+            --text: #f0f0f3;
+            --muted: #8b8b95;
+            --accent: #60a5fa;
+            --accent-dim: rgba(96, 165, 250, 0.12);
+            --border: #303035;
+            --glow: rgba(96, 165, 250, 0.18);
+        }
+
+        body {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 15px;
+            overflow-x: hidden;
+        }
+
+        /* Dot grid background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, #333 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Gradient orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            bottom: 20%;
+            left: -150px;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px 100px;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+            margin-bottom: 24px;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid var(--border);
+            flex-shrink: 0;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.2s forwards;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .name-wrapper {
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateY(100%);
+        }
+
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.3s forwards;
+        }
+
+        .email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.4s forwards;
+        }
+
+        .email a {
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .email a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .email a:hover {
+            color: var(--accent);
+        }
+
+        .email a:hover::after {
+            width: 100%;
+        }
+
+        .summary {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--muted);
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.5s forwards;
+        }
+
+        .summary + .summary {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 56px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        section.visible {
+            animation: revealSection 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes revealSection {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+        }
+
+        /* Education */
+        .education-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), #8b5cf6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .education-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .education-card:hover::before {
+            opacity: 1;
+        }
+
+        .school {
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .degree {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .degree span {
+            color: var(--accent);
+            opacity: 0.8;
+        }
+
+        /* Experience */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent), var(--border) 30%, var(--border) 70%, transparent);
+            border-radius: 1px;
+        }
+
+        .job {
+            position: relative;
+            margin-bottom: 40px;
+            padding: 20px 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .job::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 28px;
+            width: 10px;
+            height: 10px;
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .job:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+            box-shadow: 0 0 30px var(--glow);
+        }
+
+        .job:hover::before {
+            background: var(--accent);
+            box-shadow: 0 0 12px var(--accent);
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            margin-bottom: 12px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 16px;
+            display: inline;
+        }
+
+        .company {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .company:hover {
+            opacity: 0.8;
+        }
+
+        .job-period {
+            font-size: 13px;
+            color: var(--muted);
+            display: inline;
+            margin-left: 12px;
+        }
+
+        .job-period::before {
+            content: '//';
+            margin-right: 8px;
+            opacity: 0.5;
+        }
+
+        .job-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 16px 0;
+        }
+
+        .tech-tag {
+            font-size: 11px;
+            padding: 5px 11px;
+            background: var(--accent-dim);
+            color: var(--accent);
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .job-details {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .job-details li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            list-style: none;
+        }
+
+        .job-details li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-family: 'SF Mono', monospace;
+            font-size: 12px;
+        }
+
+        /* Minor roles */
+        .minor-roles {
+            display: grid;
+            gap: 12px;
+        }
+
+        .minor-role {
+            padding: 16px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .minor-role:hover {
+            border-color: var(--border);
+            background: rgba(96, 165, 250, 0.04);
+            transform: translateX(4px);
+        }
+
+        .minor-role .job-title {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .minor-role .job-period {
+            font-size: 12px;
+        }
+
+        .minor-role .job-period::before {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--muted);
+            font-size: 12px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 1s forwards;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Cursor glow effect */
+        .cursor-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        body:hover .cursor-glow {
+            opacity: 1;
+        }
+
+        /* Print styles */
+        @media print {
+            .bg-grid, .orb, .cursor-glow { display: none; }
+            body { background: #fff; color: #000; }
+            .container { padding: 20px 0; }
+            section { opacity: 1; transform: none; }
+            .job, .education-card, .minor-role {
+                background: transparent;
+                border-color: #ddd;
+            }
+            h1 { background: none; -webkit-text-fill-color: #000; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .container { padding: 60px 20px 80px; }
+            .header-top { flex-direction: column; align-items: center; text-align: center; }
+            .profile-photo { width: 100px; height: 100px; }
+            .header-info { width: 100%; }
+            .email { justify-content: center; }
+            .timeline { padding-left: 20px; }
+            .job::before { left: -25px; }
+            .orb { opacity: 0.2; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <img src="profile_photo.jpg" alt="James Li" class="profile-photo">
+                <div class="header-info">
+                    <div class="name-wrapper">
+                        <h1>James Li</h1>
+                    </div>
+                    <div class="tagline">Senior Backend Engineer</div>
+                    <div class="email">
+                        <span>//</span>
+                        <a href="mailto:jamesli@csie.io">jamesli@csie.io</a>
+                    </div>
+                </div>
+            </div>
+            <p class="summary">
+                Senior Backend engineer proficient in Python development and system performance optimization, with experience in Kubernetes and Azure. Skilled at rapidly prototyping new technologies to evaluate feasibility and deliver solutions.
+            </p>
+            <p class="summary">
+                Leverages modern AI-assisted tooling to accelerate development while maintaining code quality and system reliability.
+            </p>
+        </header>
+
+        <section data-animate>
+            <div class="section-header">
+                <span class="section-title">Education</span>
+                <span class="section-line"></span>
+            </div>
+            <div class="education-card">
+                <div class="school">National Chung Cheng University</div>
+                <div class="degree">M.S., Computer Science and Information Engineering <span>2018 – 2020</span></div>
+                <div class="degree">B.S., Computer Science and Information Engineering <span>2014 – 2018</span></div>
+            </div>
+        </section>
+
+        <section data-animate>
+            <div class="section-header">
+                <span class="section-title">Experience</span>
+                <span class="section-line"></span>
+            </div>
+
+            <div class="timeline">
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Senior Software Engineer @ <a href="https://www.wiwynn.com" class="company" target="_blank" rel="noopener">Wiwynn</a></span>
+                        <span class="job-period">Oct 2022 – Present</span>
+                    </div>
+                    <div class="job-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">DRF</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">K8s</span>
+                        <span class="tech-tag">Kafka</span>
+                        <span class="tech-tag">Omniverse</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Built automation systems and SaaS for worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability.</li>
+                        <li>Engineered automated testing solutions for immersion cooling infrastructure—delivered multi-system coordination framework and established integration protocols with external partners.</li>
+                        <li>Prototyped Omniverse-based digital twin for production line monitoring—delivered real-time 3D visualization pipeline and companion web interface for pre-production simulation.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">Backend Engineer @ <a href="https://palup.ai" class="company" target="_blank" rel="noopener">PalUp</a></span>
+                        <span class="job-period">Jun 2022 – Sep 2022</span>
+                    </div>
+                    <div class="job-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Developed image recognition system for automated end-to-end testing.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">R&D Engineer @ <a href="https://www.auo.com" class="company" target="_blank" rel="noopener">AUO</a></span>
+                        <span class="job-period">Aug 2020 – May 2022</span>
+                    </div>
+                    <div class="job-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">jQuery</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Developed Machine Learning SaaS platform.</li>
+                        <li>Managed servers and promoted DevOps culture and agile development practices.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section data-animate>
+            <div class="section-header">
+                <span class="section-title">Earlier Roles</span>
+                <span class="section-line"></span>
+            </div>
+            <div class="minor-roles">
+                <div class="minor-role">
+                    <div class="job-title">Software Engineer Intern @ <a href="https://www.cac.edu.tw/cacportal/index.php" class="company" target="_blank" rel="noopener">College Admissions Committee</a></div>
+                    <div class="job-period">Feb 2019 – Apr 2020</div>
+                </div>
+                <div class="minor-role">
+                    <div class="job-title">Software Engineer Intern @ <a href="https://www.awoo.ai" class="company" target="_blank" rel="noopener">awoo Intelligence</a></div>
+                    <div class="job-period">Feb 2017 – Sep 2017</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span>// built with html + css + js</span>
+        </footer>
+    </div>
+
+    <script>
+        // Cursor glow effect
+        const cursorGlow = document.getElementById('cursorGlow');
+        let mouseX = 0, mouseY = 0;
+        let glowX = 0, glowY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateGlow() {
+            glowX += (mouseX - glowX) * 0.1;
+            glowY += (mouseY - glowY) * 0.1;
+            cursorGlow.style.left = (glowX - 200) + 'px';
+            cursorGlow.style.top = (glowY - 200) + 'px';
+            requestAnimationFrame(animateGlow);
+        }
+        animateGlow();
+
+        // Scroll reveal
+        const sections = document.querySelectorAll('[data-animate]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
