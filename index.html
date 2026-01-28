@@ -189,21 +189,23 @@
             width: 100%;
         }
 
+        .summary-container {
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.5s forwards;
+        }
+
         .summary {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 17px;
             line-height: 1.8;
             color: var(--muted);
             max-width: 600px;
-            opacity: 0;
-            animation: fadeIn 0.6s ease 0.5s forwards;
         }
 
         .summary + .summary {
             margin-top: 16px;
             padding-top: 16px;
             border-top: 1px solid var(--border);
-            animation-delay: 0.6s;
         }
 
         @keyframes fadeIn {
@@ -478,21 +480,6 @@
             animation: fadeIn 0.6s ease 1s forwards;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .footer-links a {
-            color: var(--muted);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
         /* Language toggle */
         .lang-toggle {
             display: flex;
@@ -525,13 +512,6 @@
             background: var(--accent-dim);
             color: var(--accent);
         }
-
-        [data-lang-zh] { display: none; }
-        body.zh [data-lang-en] { display: none; }
-        body.zh [data-lang-zh] { display: block; }
-        body.zh span[data-lang-zh] { display: inline; }
-        body.zh .job-title[data-lang-zh] { display: inline; }
-        body.zh .degree[data-lang-zh] { display: block; }
 
         /* Cursor glow effect */
         .cursor-glow {
@@ -592,14 +572,12 @@
                 <img src="profile_photo.jpg" alt="James Li" class="profile-photo">
                 <div class="header-info">
                     <div class="name-wrapper">
-                        <h1 data-lang-en>James Li</h1>
-                        <h1 data-lang-zh>李政勳</h1>
+                        <h1 id="name"></h1>
                     </div>
-                    <div class="tagline" data-lang-en>Senior Backend Engineer</div>
-                    <div class="tagline" data-lang-zh>資深後端工程師</div>
+                    <div class="tagline" id="tagline"></div>
                     <div class="email">
                         <span>//</span>
-                        <a href="mailto:jamesli@csie.io">jamesli@csie.io</a>
+                        <a id="email-link" href=""></a>
                     </div>
                 </div>
                 <div class="lang-toggle">
@@ -607,142 +585,109 @@
                     <button class="lang-btn" data-lang="zh">中文</button>
                 </div>
             </div>
-            <p class="summary" data-lang-en>
-                Senior Backend engineer proficient in Python development and system performance optimization, with experience in Kubernetes and Azure. Skilled at rapidly prototyping new technologies to evaluate feasibility and deliver solutions.
-            </p>
-            <p class="summary" data-lang-en>
-                Leverages modern AI-assisted tooling to accelerate development while maintaining code quality and system reliability.
-            </p>
-            <p class="summary" data-lang-zh>
-                資深後端工程師，擅長 Python 開發與系統效能優化，具備 Kubernetes 及 Azure 實戰經驗。善於快速原型驗證新技術的可行性並交付解決方案。
-            </p>
-            <p class="summary" data-lang-zh>
-                運用現代 AI 輔助工具加速開發流程，同時確保程式碼品質與系統穩定性。
-            </p>
+            <div class="summary-container" id="summary-container"></div>
         </header>
 
-        <section data-animate>
+        <section data-animate id="education-section">
             <div class="section-header">
-                <span class="section-title" data-lang-en>Education</span>
-                <span class="section-title" data-lang-zh>學歷</span>
+                <span class="section-title" id="education-title"></span>
                 <span class="section-line"></span>
             </div>
-            <div class="education-card">
-                <div class="school" data-lang-en>National Chung Cheng University</div>
-                <div class="school" data-lang-zh>國立中正大學</div>
-                <div class="degree" data-lang-en>M.S., Computer Science and Information Engineering <span>2018 – 2020</span></div>
-                <div class="degree" data-lang-en>B.S., Computer Science and Information Engineering <span>2014 – 2018</span></div>
-                <div class="degree" data-lang-zh>資訊工程研究所碩士 <span>2018 – 2020</span></div>
-                <div class="degree" data-lang-zh>資訊工程學系學士 <span>2014 – 2018</span></div>
-            </div>
+            <div class="education-card" id="education-card"></div>
         </section>
 
-        <section data-animate>
+        <section data-animate id="experience-section">
             <div class="section-header">
-                <span class="section-title" data-lang-en>Experience</span>
-                <span class="section-title" data-lang-zh>工作經歷</span>
+                <span class="section-title" id="experience-title"></span>
                 <span class="section-line"></span>
             </div>
-
-            <div class="timeline">
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title" data-lang-en>Senior Software Engineer @ <a href="https://www.wiwynn.com" class="company" target="_blank" rel="noopener">Wiwynn</a></span>
-                        <span class="job-title" data-lang-zh>資深軟體工程師 @ <a href="https://www.wiwynn.com" class="company" target="_blank" rel="noopener">緯穎科技</a></span>
-                        <span class="job-period" data-lang-en>Oct 2022 – Present</span>
-                        <span class="job-period" data-lang-zh>2022/10 – 迄今</span>
-                    </div>
-                    <div class="job-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">DRF</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Azure</span>
-                        <span class="tech-tag">K8s</span>
-                        <span class="tech-tag">Kafka</span>
-                        <span class="tech-tag">Omniverse</span>
-                    </div>
-                    <ul class="job-details" data-lang-en>
-                        <li>Built automation systems and SaaS for worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability.</li>
-                        <li>Engineered automated testing solutions for immersion cooling infrastructure—delivered multi-system coordination framework and established integration protocols with external partners.</li>
-                        <li>Prototyped Omniverse-based digital twin for production line monitoring—delivered real-time 3D visualization pipeline and companion web interface for pre-production simulation.</li>
-                    </ul>
-                    <ul class="job-details" data-lang-zh>
-                        <li>建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性。</li>
-                        <li>開發浸沒式冷卻基礎設施的自動化測試方案——交付多系統協調框架，並建立與外部合作夥伴的整合協定。</li>
-                        <li>原型開發 Omniverse 數位孿生產線監控系統——實現即時 3D 視覺化生產線的網頁介面，以及用於量產前模擬驗證的網頁工具。</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title" data-lang-en>Backend Engineer @ <a href="https://palup.ai" class="company" target="_blank" rel="noopener">PalUp</a></span>
-                        <span class="job-title" data-lang-zh>後端工程師 @ <a href="https://palup.ai" class="company" target="_blank" rel="noopener">PalUp</a></span>
-                        <span class="job-period" data-lang-en>Jun 2022 – Sep 2022</span>
-                        <span class="job-period" data-lang-zh>2022/06 – 2022/09</span>
-                    </div>
-                    <div class="job-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">Flask</span>
-                    </div>
-                    <ul class="job-details" data-lang-en>
-                        <li>Developed image recognition system for automated end-to-end testing.</li>
-                    </ul>
-                    <ul class="job-details" data-lang-zh>
-                        <li>開發影像辨識系統，用於自動化端對端測試。</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title" data-lang-en>R&D Engineer @ <a href="https://www.auo.com" class="company" target="_blank" rel="noopener">AUO</a></span>
-                        <span class="job-title" data-lang-zh>研發替代役 @ <a href="https://www.auo.com" class="company" target="_blank" rel="noopener">友達光電</a></span>
-                        <span class="job-period" data-lang-en>Aug 2020 – May 2022</span>
-                        <span class="job-period" data-lang-zh>2020/08 – 2022/05</span>
-                    </div>
-                    <div class="job-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">jQuery</span>
-                    </div>
-                    <ul class="job-details" data-lang-en>
-                        <li>Developed Machine Learning SaaS platform.</li>
-                        <li>Managed servers and promoted DevOps culture and agile development practices.</li>
-                    </ul>
-                    <ul class="job-details" data-lang-zh>
-                        <li>開發機器學習 SaaS 平台。</li>
-                        <li>伺服器維運管理，推動 DevOps 與敏捷開發文化。</li>
-                    </ul>
-                </div>
-            </div>
+            <div class="timeline" id="timeline"></div>
         </section>
 
-        <section data-animate>
+        <section data-animate id="earlier-roles-section">
             <div class="section-header">
-                <span class="section-title" data-lang-en>Earlier Roles</span>
-                <span class="section-title" data-lang-zh>早期經歷</span>
+                <span class="section-title" id="earlier-roles-title"></span>
                 <span class="section-line"></span>
             </div>
-            <div class="minor-roles">
-                <div class="minor-role">
-                    <div class="job-title" data-lang-en>Software Engineer Intern @ <a href="https://www.cac.edu.tw/cacportal/index.php" class="company" target="_blank" rel="noopener">College Admissions Committee</a></div>
-                    <div class="job-title" data-lang-zh>軟體工程實習生 @ <a href="https://www.cac.edu.tw/cacportal/index.php" class="company" target="_blank" rel="noopener">大學招生委員會聯合會</a></div>
-                    <div class="job-period" data-lang-en>Feb 2019 – Apr 2020</div>
-                    <div class="job-period" data-lang-zh>2019/02 – 2020/04</div>
-                </div>
-                <div class="minor-role">
-                    <div class="job-title" data-lang-en>Software Engineer Intern @ <a href="https://www.awoo.ai" class="company" target="_blank" rel="noopener">awoo Intelligence</a></div>
-                    <div class="job-title" data-lang-zh>軟體工程實習生 @ <a href="https://www.awoo.ai" class="company" target="_blank" rel="noopener">awoo 阿物科技</a></div>
-                    <div class="job-period" data-lang-en>Feb 2017 – Sep 2017</div>
-                    <div class="job-period" data-lang-zh>2017/02 – 2017/09</div>
-                </div>
-            </div>
+            <div class="minor-roles" id="minor-roles"></div>
         </section>
 
         <footer></footer>
     </div>
 
     <script>
+        // Content data
+        let contentData = null;
+        let currentLang = 'en';
+
+        // Fetch content and render
+        async function init() {
+            try {
+                const response = await fetch('content.json');
+                contentData = await response.json();
+                render();
+                initScrollReveal();
+            } catch (error) {
+                console.error('Failed to load content:', error);
+            }
+        }
+
+        function render() {
+            const data = contentData[currentLang];
+
+            // Header
+            document.getElementById('name').textContent = data.name;
+            document.getElementById('tagline').textContent = data.tagline;
+            document.getElementById('email-link').textContent = data.email;
+            document.getElementById('email-link').href = `mailto:${data.email}`;
+
+            // Summary
+            const summaryContainer = document.getElementById('summary-container');
+            summaryContainer.innerHTML = data.summary.map(text =>
+                `<p class="summary">${text}</p>`
+            ).join('');
+
+            // Section titles
+            document.getElementById('education-title').textContent = data.sections.education;
+            document.getElementById('experience-title').textContent = data.sections.experience;
+            document.getElementById('earlier-roles-title').textContent = data.sections.earlierRoles;
+
+            // Education
+            const educationCard = document.getElementById('education-card');
+            educationCard.innerHTML = `
+                <div class="school">${data.education.school}</div>
+                ${data.education.degrees.map(d =>
+                    `<div class="degree">${d.title} <span>${d.year}</span></div>`
+                ).join('')}
+            `;
+
+            // Experience
+            const timeline = document.getElementById('timeline');
+            timeline.innerHTML = data.experience.map(job => `
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">${job.title} @ <a href="${job.url}" class="company" target="_blank" rel="noopener">${job.company}</a></span>
+                        <span class="job-period">${job.period}</span>
+                    </div>
+                    <div class="job-tech">
+                        ${job.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+                    </div>
+                    <ul class="job-details">
+                        ${job.details.map(d => `<li>${d}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+
+            // Earlier roles
+            const minorRoles = document.getElementById('minor-roles');
+            minorRoles.innerHTML = data.earlierRoles.map(role => `
+                <div class="minor-role">
+                    <div class="job-title">${role.title} @ <a href="${role.url}" class="company" target="_blank" rel="noopener">${role.company}</a></div>
+                    <div class="job-period">${role.period}</div>
+                </div>
+            `).join('');
+        }
+
         // Cursor glow effect
         const cursorGlow = document.getElementById('cursorGlow');
         let mouseX = 0, mouseY = 0;
@@ -763,34 +708,35 @@
         animateGlow();
 
         // Scroll reveal
-        const sections = document.querySelectorAll('[data-animate]');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+        function initScrollReveal() {
+            const sections = document.querySelectorAll('[data-animate]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
 
-        sections.forEach(section => observer.observe(section));
+            sections.forEach(section => observer.observe(section));
+        }
 
         // Language toggle
         const langBtns = document.querySelectorAll('.lang-btn');
         langBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                const lang = btn.dataset.lang;
+                currentLang = btn.dataset.lang;
                 langBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                if (lang === 'zh') {
-                    document.body.classList.add('zh');
-                } else {
-                    document.body.classList.remove('zh');
-                }
+                render();
             });
         });
+
+        // Initialize
+        init();
     </script>
 </body>
 </html>

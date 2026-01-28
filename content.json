@@ -1,0 +1,142 @@
+{
+  "en": {
+    "name": "James Li",
+    "tagline": "Senior Backend Engineer",
+    "email": "jamesli@csie.io",
+    "summary": [
+      "Senior Backend engineer proficient in Python development and system performance optimization, with experience in Kubernetes and Azure. Skilled at rapidly prototyping new technologies to evaluate feasibility and deliver solutions.",
+      "Leverages modern AI-assisted tooling to accelerate development while maintaining code quality and system reliability."
+    ],
+    "education": {
+      "school": "National Chung Cheng University",
+      "degrees": [
+        { "title": "M.S., Computer Science and Information Engineering", "year": "2018 – 2020" },
+        { "title": "B.S., Computer Science and Information Engineering", "year": "2014 – 2018" }
+      ]
+    },
+    "experience": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Wiwynn",
+        "url": "https://www.wiwynn.com",
+        "period": "Oct 2022 – Present",
+        "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
+        "details": [
+          "Built automation systems and SaaS for worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability.",
+          "Engineered automated testing solutions for immersion cooling infrastructure—delivered multi-system coordination framework and established integration protocols with external partners.",
+          "Prototyped Omniverse-based digital twin for production line monitoring—delivered real-time 3D visualization pipeline and companion web interface for pre-production simulation."
+        ]
+      },
+      {
+        "title": "Backend Engineer",
+        "company": "PalUp",
+        "url": "https://palup.ai",
+        "period": "Jun 2022 – Sep 2022",
+        "tech": ["Python", "PyTorch", "Flask"],
+        "details": [
+          "Developed image recognition system for automated end-to-end testing."
+        ]
+      },
+      {
+        "title": "R&D Engineer",
+        "company": "AUO",
+        "url": "https://www.auo.com",
+        "period": "Aug 2020 – May 2022",
+        "tech": ["Python", "Flask", "jQuery"],
+        "details": [
+          "Developed Machine Learning SaaS platform.",
+          "Managed servers and promoted DevOps culture and agile development practices."
+        ]
+      }
+    ],
+    "earlierRoles": [
+      {
+        "title": "Software Engineer Intern",
+        "company": "College Admissions Committee",
+        "url": "https://www.cac.edu.tw/cacportal/index.php",
+        "period": "Feb 2019 – Apr 2020"
+      },
+      {
+        "title": "Software Engineer Intern",
+        "company": "awoo Intelligence",
+        "url": "https://www.awoo.ai",
+        "period": "Feb 2017 – Sep 2017"
+      }
+    ],
+    "sections": {
+      "education": "Education",
+      "experience": "Experience",
+      "earlierRoles": "Earlier Roles"
+    }
+  },
+  "zh": {
+    "name": "李政勳",
+    "tagline": "資深後端工程師",
+    "email": "jamesli@csie.io",
+    "summary": [
+      "資深後端工程師，擅長 Python 開發與系統效能優化，具備 Kubernetes 及 Azure 實戰經驗。善於快速原型驗證新技術的可行性並交付解決方案。",
+      "運用現代 AI 輔助工具加速開發流程，同時確保程式碼品質與系統穩定性。"
+    ],
+    "education": {
+      "school": "國立中正大學",
+      "degrees": [
+        { "title": "資訊工程研究所碩士", "year": "2018 – 2020" },
+        { "title": "資訊工程學系學士", "year": "2014 – 2018" }
+      ]
+    },
+    "experience": [
+      {
+        "title": "資深軟體工程師",
+        "company": "緯穎科技",
+        "url": "https://www.wiwynn.com",
+        "period": "2022/10 – 迄今",
+        "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
+        "details": [
+          "建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性。",
+          "開發浸沒式冷卻基礎設施的自動化測試方案——交付多系統協調框架，並建立與外部合作夥伴的整合協定。",
+          "原型開發 Omniverse 數位孿生產線監控系統——實現即時 3D 視覺化生產線的網頁介面，以及用於量產前模擬驗證的網頁工具。"
+        ]
+      },
+      {
+        "title": "後端工程師",
+        "company": "PalUp",
+        "url": "https://palup.ai",
+        "period": "2022/06 – 2022/09",
+        "tech": ["Python", "PyTorch", "Flask"],
+        "details": [
+          "開發影像辨識系統，用於自動化端對端測試。"
+        ]
+      },
+      {
+        "title": "研發替代役",
+        "company": "友達光電",
+        "url": "https://www.auo.com",
+        "period": "2020/08 – 2022/05",
+        "tech": ["Python", "Flask", "jQuery"],
+        "details": [
+          "開發機器學習 SaaS 平台。",
+          "伺服器維運管理，推動 DevOps 與敏捷開發文化。"
+        ]
+      }
+    ],
+    "earlierRoles": [
+      {
+        "title": "軟體工程實習生",
+        "company": "大學招生委員會聯合會",
+        "url": "https://www.cac.edu.tw/cacportal/index.php",
+        "period": "2019/02 – 2020/04"
+      },
+      {
+        "title": "軟體工程實習生",
+        "company": "awoo 阿物科技",
+        "url": "https://www.awoo.ai",
+        "period": "2017/02 – 2017/09"
+      }
+    ],
+    "sections": {
+      "education": "學歷",
+      "experience": "工作經歷",
+      "earlierRoles": "早期經歷"
+    }
+  }
+}
