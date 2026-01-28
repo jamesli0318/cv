@@ -22,9 +22,9 @@
         "period": "Oct 2022 – Present",
         "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
         "details": [
-          "Built automation systems and SaaS for worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability.",
-          "Engineered automated testing solutions for immersion cooling infrastructure—delivered multi-system coordination framework and established integration protocols with external partners.",
-          "Prototyped Omniverse-based digital twin for production line monitoring—delivered real-time 3D visualization pipeline and companion web interface for pre-production simulation."
+          "Building automation systems and SaaS for Wiwynn worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability.",
+          "Engineered automated testing solutions for immersion cooling infrastructure — delivered multi-system coordination framework and established integration protocols with external partners.",
+          "Prototyped Omniverse-based digital twin for production line monitoring — delivered real-time 3D visualization production line and SaaS tool for pre-production simulation."
         ]
       },
       {
@@ -38,14 +38,15 @@
         ]
       },
       {
-        "title": "R&D Engineer",
+        "title": "R&D Substitute Service",
         "company": "AUO",
         "url": "https://www.auo.com",
         "period": "Aug 2020 – May 2022",
         "tech": ["Python", "Flask", "jQuery"],
         "details": [
           "Developed Machine Learning SaaS platform.",
-          "Managed servers and promoted DevOps culture and agile development practices."
+          "Infrastructure Management.",
+          "Established a DevOps and agile development culture."
         ]
       }
     ],
@@ -94,7 +95,7 @@
         "details": [
           "建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性。",
           "開發浸沒式冷卻基礎設施的自動化測試方案——交付多系統協調框架，並建立與外部合作夥伴的整合協定。",
-          "原型開發 Omniverse 數位孿生產線監控系統——實現即時 3D 視覺化生產線的網頁介面，以及用於量產前模擬驗證的網頁工具。"
+          "原型開發 Omniverse 數位孿生產線監控系統——實現即時 3D 視覺化生產線數位孿生，以及用於量產前模擬驗證的網頁工具。"
         ]
       },
       {
@@ -104,7 +105,7 @@
         "period": "2022/06 – 2022/09",
         "tech": ["Python", "PyTorch", "Flask"],
         "details": [
-          "開發影像辨識系統，用於自動化端對端測試。"
+          "開發影像辨識系統，用於自動化端到端測試。"
         ]
       },
       {
@@ -115,14 +116,15 @@
         "tech": ["Python", "Flask", "jQuery"],
         "details": [
           "開發機器學習 SaaS 平台。",
-          "伺服器維運管理，推動 DevOps 與敏捷開發文化。"
+          "基礎設施維運管理。",
+          "建立 DevOps 與敏捷開發文化。"
         ]
       }
     ],
     "earlierRoles": [
       {
         "title": "軟體工程實習生",
-        "company": "大學招生委員會聯合會",
+        "company": "大學甄選入選委員會",
         "url": "https://www.cac.edu.tw/cacportal/index.php",
         "period": "2019/02 – 2020/04"
       },
