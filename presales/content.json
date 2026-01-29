@@ -4,8 +4,10 @@
     "tagline": "Senior Backend Engineer",
     "email": "jamesli@csie.io",
     "summary": [
-      "Senior Backend engineer proficient in Python development and system performance optimization, with experience in Kubernetes and Azure. Skilled at rapidly prototyping new technologies to evaluate feasibility and deliver solutions.",
-      "Leverages modern AI-assisted tooling to accelerate development while maintaining code quality and system reliability."
+      "Solution-oriented engineer bridging technical implementation and business requirements.",
+      "Proven track record in leading projects from requirements gathering to production, delivering automation systems and SaaS platforms that reduce operational costs.",
+      "Proficient in Python/K8s/Azure with strong capability in system architecture design and cross-team collaboration.",
+      "Experienced in rapid prototyping and solution validation, with hands-on understanding of how AI accelerates both development workflows and business value creation." 
     ],
     "education": {
       "school": "National Chung Cheng University",
@@ -75,8 +77,9 @@
     "tagline": "資深後端工程師",
     "email": "jamesli@csie.io",
     "summary": [
-      "資深後端工程師，擅長 Python 開發與系統效能優化，具備 Kubernetes 及 Azure 實戰經驗。善於快速原型驗證新技術的可行性並交付解決方案。",
-      "運用現代 AI 輔助工具加速開發流程，同時確保程式碼品質與系統穩定性。"
+      "以解決方案為導向的工程師，擅長在技術實作與商業需求之間搭起橋樑。",
+      "具備從需求蒐集到正式上線的專案領導實績，成功交付自動化系統與 SaaS 平台，有效降低營運成本。熟悉 Python／K8s／Azure，在系統架構設計與跨團隊協作方面具備強大能力。",
+      "擅長快速原型開發與解決方案驗證，並具備實務層面的 AI 理解，能加速開發流程並創造實際的商業價值。"
     ],
     "education": {
       "school": "國立中正大學",
