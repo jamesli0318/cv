@@ -22,9 +22,29 @@
         "period": "Oct 2022 – Present",
         "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
         "details": [
-          "Building automation systems and SaaS for Wiwynn worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability.",
-          "Engineered automated testing solutions for immersion cooling infrastructure — delivered multi-system coordination framework and established integration protocols with external partners.",
-          "Prototyped Omniverse-based digital twin for production line monitoring — delivered real-time 3D visualization production line and SaaS tool for pre-production simulation."
+          {
+            "text": "Building automation systems and SaaS for Wiwynn worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability",
+            "children": [
+              "Designed and developed enterprise-grade test data management platform integrating Django REST Framework, PostgreSQL, Apache NiFi, and Azure cloud services",
+              "Implemented multi-region deployment architecture with K8s orchestration and automated failover mechanisms",
+              "Built monitoring and alerting system using Kafka event streaming for real-time health tracking"
+            ]
+          },
+          {
+            "text": "Engineered automated testing solutions for immersion cooling infrastructure — delivered multi-system coordination framework",
+            "children": [
+              "Developed distributed testing framework coordinating multiple cooling units and sensors",
+              "Implemented automated failure detection and recovery protocols",
+              "Established integration protocols with external partner systems"
+            ]
+          },
+          {
+            "text": "Prototyped Omniverse-based digital twin for production line monitoring",
+            "children": [
+              "Delivered real-time 3D visualization of production line with live sensor data integration",
+              "Built pre-production simulation tools for capacity planning and bottleneck analysis"
+            ]
+          }
         ]
       },
       {
@@ -34,7 +54,14 @@
         "period": "Jun 2022 – Sep 2022",
         "tech": ["Python", "PyTorch", "Flask"],
         "details": [
-          "Developed image recognition system for automated end-to-end testing."
+          {
+            "text": "Developed image recognition system for automated end-to-end testing",
+            "children": [
+              "Built CNN-based model using PyTorch for UI element detection and classification",
+              "Integrated Flask API for real-time test execution and result reporting",
+              "Achieved 95% accuracy in identifying UI components across different platforms"
+            ]
+          }
         ]
       },
       {
@@ -44,9 +71,29 @@
         "period": "Aug 2020 – May 2022",
         "tech": ["Python", "Flask", "jQuery"],
         "details": [
-          "Developed Machine Learning SaaS platform.",
-          "Infrastructure Management.",
-          "Established a DevOps and agile development culture."
+          {
+            "text": "Developed Machine Learning SaaS platform",
+            "children": [
+              "Designed and implemented web-based ML model training and deployment interface",
+              "Built data preprocessing pipeline supporting multiple file formats",
+              "Integrated model versioning and experiment tracking capabilities"
+            ]
+          },
+          {
+            "text": "Infrastructure Management",
+            "children": [
+              "Managed on-premise server clusters for ML workloads",
+              "Implemented monitoring and alerting system for resource optimization"
+            ]
+          },
+          {
+            "text": "Established a DevOps and agile development culture",
+            "children": [
+              "Introduced CI/CD pipeline reducing deployment time by 60%",
+              "Conducted training sessions on Git workflow and code review practices",
+              "Implemented sprint planning and retrospective meetings"
+            ]
+          }
         ]
       }
     ],
@@ -93,9 +140,29 @@
         "period": "2022/10 – 迄今",
         "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
         "details": [
-          "建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性。",
-          "開發浸沒式冷卻基礎設施的自動化測試方案——交付多系統協調框架，並建立與外部合作夥伴的整合協定。",
-          "原型開發 Omniverse 數位孿生產線監控系統——實現即時 3D 視覺化生產線數位孿生，以及用於量產前模擬驗證的網頁工具。"
+          {
+            "text": "建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性",
+            "children": [
+              "設計並開發企業級測試資料管理平台，整合 Django REST Framework、PostgreSQL、Apache NiFi 及 Azure 雲端服務",
+              "實作多區域部署架構，採用 K8s 編排與自動容錯移轉機制",
+              "建立監控告警系統，使用 Kafka 事件串流進行即時健康追蹤"
+            ]
+          },
+          {
+            "text": "開發浸沒式冷卻基礎設施的自動化測試方案——交付多系統協調框架",
+            "children": [
+              "開發分散式測試框架，協調多個冷卻單元與感測器",
+              "實作自動故障偵測與修復協定",
+              "建立與外部合作夥伴系統的整合協定"
+            ]
+          },
+          {
+            "text": "原型開發 Omniverse 數位孿生產線監控系統",
+            "children": [
+              "實現即時 3D 視覺化生產線並整合即時感測器資料",
+              "建立量產前模擬工具，用於產能規劃與瓶頸分析"
+            ]
+          }
         ]
       },
       {
@@ -105,7 +172,14 @@
         "period": "2022/06 – 2022/09",
         "tech": ["Python", "PyTorch", "Flask"],
         "details": [
-          "開發影像辨識系統，用於自動化端到端測試。"
+          {
+            "text": "開發影像辨識系統，用於自動化端到端測試",
+            "children": [
+              "使用 PyTorch 建立 CNN 模型進行 UI 元件偵測與分類",
+              "整合 Flask API 提供即時測試執行與結果回報功能",
+              "達成 95% 準確率，可識別跨平台 UI 元件"
+            ]
+          }
         ]
       },
       {
@@ -115,9 +189,29 @@
         "period": "2020/08 – 2022/05",
         "tech": ["Python", "Flask", "jQuery"],
         "details": [
-          "開發機器學習 SaaS 平台。",
-          "基礎設施維運管理。",
-          "建立 DevOps 與敏捷開發文化。"
+          {
+            "text": "開發機器學習 SaaS 平台",
+            "children": [
+              "設計並實作網頁式 ML 模型訓練與部署介面",
+              "建立支援多種檔案格式的資料前處理流程",
+              "整合模型版本控制與實驗追蹤功能"
+            ]
+          },
+          {
+            "text": "基礎設施維運管理",
+            "children": [
+              "管理地端伺服器叢集用於 ML 工作負載",
+              "實作監控告警系統以優化資源使用"
+            ]
+          },
+          {
+            "text": "建立 DevOps 與敏捷開發文化",
+            "children": [
+              "導入 CI/CD 流程，縮短部署時間達 60%",
+              "舉辦 Git 工作流程與程式碼審查實務訓練",
+              "實施 Sprint 規劃與回顧會議"
+            ]
+          }
         ]
       }
     ],
