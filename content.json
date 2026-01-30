@@ -4,7 +4,7 @@
     "tagline": "Senior Backend Engineer",
     "email": "jamesli@csie.io",
     "summary": [
-      "Senior Backend engineer specializing in cloud-native infrastructure and datacenter automation. Architected high-availability SaaS platforms achieving 99.5% SLA across Wiwynn's global data centers, with expertise in Django, PostgreSQL, Azure cloud services, and Kubernetes orchestration.",
+      "Senior Backend engineer specializing in cloud-native infrastructure and datacenter automation. Architected high-availability SaaS platforms achieving 99.5%+ SLA across Wiwynn's global data centers, with expertise in Django, PostgreSQL, Azure cloud services, and Kubernetes orchestration.",
       "Proven track record in system performance optimization, designing Azure infrastructure (Blob Storage, Container Registry, Front Door, DevOps pipelines), and building distributed systems with Kafka. Experienced in leading cross-team initiatives from requirements analysis to production deployment.",
       "Leverages modern AI-assisted tooling to accelerate development while maintaining code quality and system reliability."
     ],
@@ -160,7 +160,7 @@
         "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
         "details": [
           {
-            "text": "建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性",
+            "text": "建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5%+ SLA 高可用性",
             "children": [
               {
                 "text": "資料中心日誌歸檔系統",
