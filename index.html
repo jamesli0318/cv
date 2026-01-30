@@ -511,6 +511,37 @@
             opacity: 0.7;
         }
 
+        /* Level 3 nested items */
+        .nested-details .nested-item.nested-level-3 {
+            padding-left: 60px;
+            font-size: 12px;
+        }
+
+        .nested-details .nested-item.nested-level-3::before {
+            left: 40px;
+            content: '·';
+        }
+
+        /* Nested expand toggle styling */
+        .nested-item .expand-toggle {
+            font-size: 11px;
+            padding: 3px 8px;
+            margin-left: 8px;
+        }
+
+        .nested-item .expand-toggle .toggle-icon {
+            font-size: 9px;
+        }
+
+        .nested-item .expand-toggle .toggle-text {
+            font-size: 10px;
+        }
+
+        /* Nested details within nested items */
+        .nested-item .nested-details {
+            margin-left: 0;
+        }
+
         @media (max-width: 600px) {
             .nested-details .nested-item {
                 padding-left: 30px;
@@ -519,6 +550,15 @@
 
             .nested-details .nested-item::before {
                 left: 15px;
+            }
+
+            .nested-details .nested-item.nested-level-3 {
+                padding-left: 45px;
+                font-size: 11px;
+            }
+
+            .nested-details .nested-item.nested-level-3::before {
+                left: 30px;
             }
         }
 
@@ -755,13 +795,37 @@
                 ).join('')}
             `;
 
-            // Function to render detail items (supports nested structure)
-            function renderDetailItem(detail, index) {
+            // Function to render detail items (supports nested structure with unlimited depth)
+            function renderDetailItem(detail, index, level = 1) {
                 if (typeof detail === 'string') {
                     return `<li>${detail}</li>`;
                 }
 
                 if (detail.children && detail.children.length > 0) {
+                    const childrenHtml = detail.children.map((child, childIdx) => {
+                        if (typeof child === 'string') {
+                            return `<li class="nested-item nested-level-${level + 1}">${child}</li>`;
+                        }
+                        // Recursive case: child has its own children
+                        if (child.children && child.children.length > 0) {
+                            return `
+                                <li class="nested-item nested-level-${level + 1} detail-with-children">
+                                    ${child.text}
+                                    <span class="expand-toggle" data-index="${index}-${childIdx}">
+                                        <span class="toggle-icon">▶</span>
+                                        <span class="toggle-text">details</span>
+                                    </span>
+                                    <ul class="nested-details">
+                                        ${child.children.map((grandchild, gcIdx) =>
+                                            renderDetailItem(grandchild, `${index}-${childIdx}-${gcIdx}`, level + 2)
+                                        ).join('')}
+                                    </ul>
+                                </li>
+                            `;
+                        }
+                        return `<li class="nested-item nested-level-${level + 1}">${child.text || child}</li>`;
+                    }).join('');
+
                     return `
                         <li class="detail-with-children">
                             ${detail.text}
@@ -770,7 +834,7 @@
                                 <span class="toggle-text">details</span>
                             </span>
                             <ul class="nested-details">
-                                ${detail.children.map(c => `<li class="nested-item">${c}</li>`).join('')}
+                                ${childrenHtml}
                             </ul>
                         </li>
                     `;

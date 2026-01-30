@@ -23,19 +23,42 @@
         "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
         "details": [
           {
-            "text": "Building automation systems and SaaS for Wiwynn worldwide data centers, reducing operational costs and achieving 99.5% SLA high availability",
+            "text": "Building automation systems and SaaS for Wiwynn's Worldwide site data centers, reducing operational costs and achieving 99.5% SLA high availability",
             "children": [
-              "Designed and developed enterprise-grade test data management platform integrating Django REST Framework, PostgreSQL, Apache NiFi, and Azure cloud services",
-              "Implemented multi-region deployment architecture with K8s orchestration and automated failover mechanisms",
-              "Built monitoring and alerting system using Kafka event streaming for real-time health tracking"
-            ]
-          },
-          {
-            "text": "Engineered automated testing solutions for immersion cooling infrastructure — delivered multi-system coordination framework",
-            "children": [
-              "Developed distributed testing framework coordinating multiple cooling units and sensors",
-              "Implemented automated failure detection and recovery protocols",
-              "Established integration protocols with external partner systems"
+              {
+                "text": "Data Center Log Archiving System",
+                "children": [
+                  "Designed and developed a cloud native based datacenter-grade test data management platform integrating Django REST Framework, PostgreSQL, Apache NiFi, and Azure cloud services, implementing end-to-end automated workflows from distributed storage monitoring, data compression and encryption, integrity validation to redundant backup. The system employs state machine tracking for data lifecycle management, with idempotent retry mechanisms and soft-delete buffering to ensure data consistency and automatic recovery under failure scenarios such as power outages and network disruptions. Achieved high availability architecture and disaster recovery capabilities through proactive health monitoring, multi-region replication, and automated failover mechanisms, ensuring data durability and rapid retrieval of critical test assets."
+                ]
+              },
+              {
+                "text": "Azure Infrastructure",
+                "children": [
+                  "Designed Azure Blob Storage integration tool optimizing file transfer performance and cost balance across international data centers — established standardized workflows and conducted team onboarding training.",
+                  "Led migration from self-hosted registry to Azure Container Registry — eliminated single point of failure, improved global deployment speed, managed migration strategy and technical documentation.",
+                  "Configured Azure Front Door to serve self-maintained packages from Azure Blob Storage with automated collection tooling to overcome apt package management constraints — reduced K8s cluster provisioning time by several hours leveraging Azure's regional CDN performance.",
+                  "Designed flexible Azure DevOps pipeline framework supporting multi-site customization requirements and accelerating CI/CD workflows."
+                ]
+              },
+              {
+                "text": "Performance Optimization",
+                "children": [
+                  "Collaborated cross-team to diagnose API performance bottlenecks using database profiling tools — redesigned index architecture and optimized query logic, achieving 99% improvement in API response time.",
+                  "Implemented Kafka as asynchronous communication layer between internal systems and third-party services with custom-developed connectors — decoupled system dependencies and improved fault tolerance, ensuring core business continuity during third-party service outages."
+                ]
+              },
+              {
+                "text": "Network Debug Tool",
+                "children": [
+                  "Led team to develop abstraction layer for multi-vendor switch commands with unified interface for heterogeneous network equipment operations — trained on-site personnel for basic troubleshooting capabilities, reducing incident recovery time and improving system availability."
+                ]
+              },
+              {
+                "text": "Immersion Cooling Infrastructure",
+                "children": [
+                  "Engineered automated testing solutions for immersion cooling infrastructure — delivered multi-system coordination framework and established integration protocols with external partners."
+                ]
+              }
             ]
           },
           {
@@ -143,17 +166,40 @@
           {
             "text": "建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性",
             "children": [
-              "設計並開發企業級測試資料管理平台，整合 Django REST Framework、PostgreSQL、Apache NiFi 及 Azure 雲端服務",
-              "實作多區域部署架構，採用 K8s 編排與自動容錯移轉機制",
-              "建立監控告警系統，使用 Kafka 事件串流進行即時健康追蹤"
-            ]
-          },
-          {
-            "text": "開發浸沒式冷卻基礎設施的自動化測試方案——交付多系統協調框架",
-            "children": [
-              "開發分散式測試框架，協調多個冷卻單元與感測器",
-              "實作自動故障偵測與修復協定",
-              "建立與外部合作夥伴系統的整合協定"
+              {
+                "text": "資料中心日誌歸檔系統",
+                "children": [
+                  "設計並開發雲原生資料中心級測試資料管理平台，整合 Django REST Framework、PostgreSQL、Apache NiFi 及 Azure 雲端服務，實作從分散式儲存監控、資料壓縮加密、完整性驗證到冗餘備份的端到端自動化工作流程。系統採用狀態機追蹤資料生命週期管理，具備冪等重試機制與軟刪除緩衝機制，確保資料一致性並在斷電與網路中斷等故障情境下自動復原。透過主動健康監控、多區域複寫及自動容錯移轉機制，達成高可用性架構與災難復原能力，確保資料持久性與關鍵測試資產的快速檢索。"
+                ]
+              },
+              {
+                "text": "Azure 基礎設施",
+                "children": [
+                  "設計 Azure Blob Storage 整合工具，優化跨國資料中心的檔案傳輸效能與成本平衡——建立標準化工作流程並進行團隊上線訓練。",
+                  "主導從自建 registry 遷移至 Azure Container Registry——消除單點故障、提升全球部署速度、管理遷移策略與技術文件。",
+                  "配置 Azure Front Door 從 Azure Blob Storage 提供自維護套件，搭配自動化收集工具以克服 apt 套件管理限制——運用 Azure 區域 CDN 效能，縮短 K8s 叢集佈建時間數小時。",
+                  "設計彈性 Azure DevOps pipeline 框架，支援多站點客製化需求並加速 CI/CD 工作流程。"
+                ]
+              },
+              {
+                "text": "效能優化",
+                "children": [
+                  "跨團隊合作使用資料庫分析工具診斷 API 效能瓶頸——重新設計索引架構並優化查詢邏輯，API 回應時間改善 99%。",
+                  "實作 Kafka 作為內部系統與第三方服務間的非同步通訊層，搭配客製化開發的連接器——解耦系統依賴並改善容錯能力，確保第三方服務中斷時核心業務仍可持續運作。"
+                ]
+              },
+              {
+                "text": "網路除錯工具",
+                "children": [
+                  "領導團隊開發多廠商交換機指令抽象層，提供異質網路設備操作的統一介面——訓練現場人員具備基礎故障排除能力，縮短事件復原時間並提升系統可用性。"
+                ]
+              },
+              {
+                "text": "浸沒式冷卻基礎設施",
+                "children": [
+                  "開發浸沒式冷卻基礎設施的自動化測試方案——交付多系統協調框架並建立與外部合作夥伴的整合協定。"
+                ]
+              }
             ]
           },
           {
