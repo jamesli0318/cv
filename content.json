@@ -24,7 +24,7 @@
         "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
         "details": [
           {
-            "text": "Building automation systems and SaaS for Wiwynn's Worldwide site data centers, reducing operational costs and achieving 99.5% SLA high availability",
+            "text": "Building automation systems and SaaS for Wiwynn's Worldwide site data centers, reducing operational costs and achieving 99.5%+ SLA high availability",
             "children": [
               {
                 "text": "Data Center Log Archiving System",
@@ -140,7 +140,7 @@
     "tagline": "資深後端工程師",
     "email": "jamesli@csie.io",
     "summary": [
-      "資深後端工程師，專注於雲原生基礎設施與資料中心自動化。為 Wiwynn 全球資料中心架構高可用性 SaaS 平台，達成 99.5% SLA，擅長 Django、PostgreSQL、Azure 雲端服務及 Kubernetes 容器編排。",
+      "資深後端工程師，專注於雲原生基礎設施與資料中心自動化。為 Wiwynn 全球資料中心架構高可用性 SaaS 平台，達成 99.5%+ SLA，擅長 Django、PostgreSQL、Azure 雲端服務及 Kubernetes 容器編排。",
       "具備系統效能優化實績，涵蓋 Azure 基礎設施設計（Blob Storage、Container Registry、Front Door、DevOps pipelines）及 Kafka 分散式系統建置。擅長領導跨團隊專案，從需求分析到正式部署。",
       "運用現代 AI 輔助工具加速開發，同時維持程式碼品質與系統可靠性。"
     ],
