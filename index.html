@@ -767,7 +767,7 @@
                         <button class="lang-btn active" data-lang="en">EN</button>
                         <button class="lang-btn" data-lang="zh">中文</button>
                     </div>
-                    <a href="james_detailed.pdf" class="pdf-btn" download>
+                    <a href="James.pdf" class="pdf-btn" download>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
@@ -849,31 +849,9 @@
                 ).join('')}
             `;
 
-            // Function to render detail items (simple 2-level structure, always expanded)
+            // Function to render detail items (flat strings)
             function renderDetailItem(detail) {
-                // Simple string item (backwards compatibility)
-                if (typeof detail === 'string') {
-                    return `<li>${formatText(detail)}</li>`;
-                }
-
-                // Object with children - render as 2-level structure
-                if (detail.children && detail.children.length > 0) {
-                    const childrenHtml = detail.children.map(child => {
-                        return `<li class="nested-item">${formatText(child)}</li>`;
-                    }).join('');
-
-                    return `
-                        <li class="detail-with-children">
-                            ${formatText(detail.text)}
-                            <ul class="nested-details expanded">
-                                ${childrenHtml}
-                            </ul>
-                        </li>
-                    `;
-                }
-
-                // Object without children
-                return `<li>${formatText(detail.text)}</li>`;
+                return `<li>${formatText(detail)}</li>`;
             }
 
             // Experience
@@ -884,9 +862,11 @@
                         <span class="job-title">${job.title} @ <a href="${job.url}" class="company" target="_blank" rel="noopener">${job.company}</a></span>
                         <span class="job-period">${job.period}</span>
                     </div>
+                    ${job.tech && job.tech.length > 0 ? `
                     <div class="job-tech">
                         ${job.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                     </div>
+                    ` : ''}
                     <ul class="job-details">
                         ${job.details.map(d => renderDetailItem(d)).join('')}
                     </ul>

@@ -1,7 +1,7 @@
 {
   "en": {
     "name": "James Li",
-    "tagline": "Senior Backend Engineer with Strong Infrastructure/SRE Capability.",
+    "tagline": "Senior Backend Engineer|SRE|DevOps",
     "email": "jamesli@csie.io",
     "summary": [
       "High-performance systems architect with **5+ years** designing cloud-native SaaS and data center automation. Scaled systems to **100k+ QPS** with **99.5%+ SLA**. Optimized data retrieval and deployment latency **from 30+ min to <2 sec**. Expert in Python, Azure, K8s, with proven experience in **zero data loss and near-zero RTO**. Leverages modern AI-assisted tooling to accelerate development while maintaining code quality and system reliability."
@@ -9,8 +9,7 @@
     "education": {
       "school": "National Chung Cheng University",
       "degrees": [
-        { "title": "M.S., Computer Science and Information Engineering", "year": "2018 – 2020" },
-        { "title": "B.S., Computer Science and Information Engineering", "year": "2014 – 2018" }
+        { "title": "M.S. & B.S. in CSIE", "year": "2014 – 2020" }
       ]
     },
     "experience": [
@@ -21,40 +20,12 @@
         "period": "Oct 2022 – Present",
         "tech": ["Python", "PostgreSQL", "DevOps", "K8s", "Kafka", "Azure"],
         "details": [
-          {
-            "text": "Immersion Cooling Infrastructure Test Infra",
-            "children": [
-              "Co-designed and developed a high-concurrency immersion cooling test infrastructure for global data centers, scaling the system to support **100k+** peak concurrent requests. Optimized system performance and database efficiency through **K8s Ingress/Load Balancers**, **Gunicorn worker tuning**, and database layer enhancements using **PgBouncer** and complex **query optimization**, ensuring **99.5%+** SLA."
-            ]
-          },
-          {
-            "text": "Data Center Data Management System",
-            "children": [
-              "Architected a high-concurrency data platform supporting **150k+** simultaneous tasks with **zero data loss**. Implemented a state-machine driven lifecycle management system that enables **near-zero RTO** (Recovery Time Objective), allowing automated state synchronization and seamless task resumption immediately after power or network failures. Optimized data retrieval latency from ~30 minutes to 1-2 seconds —a **99% reduction** in access time, while maintaining **99.5%+ SLA** and high availability across global data center operations."
-            ]
-          },
-          {
-            "text": "Cloud Infrastructure & DevOps",
-            "children": [
-              "Reduced K8s provisioning time **from hours to minutes** by architecting an automated package delivery system using Azure Front Door (CDN) and Blob Storage, effectively bypassing regional network constraints for internal apt repositories.",
-              "**Eliminated Single Point of Failure** (SPOF) and optimized the global deployment pipeline by migrating from self-hosted registries to Azure Container Registry (ACR). This strategic migration, combined with optimized caching and CI/CD workflows, reduced deployment cycles **from tens of minutes to mere seconds**, significantly accelerating the global delivery of critical services.",
-              "Standardized cross-region data workflows by designing an integrated Azure Blob Storage tool, **reducing data transfer latency from several minutes to just seconds**. Optimized the equilibrium between high-speed performance and cloud egress costs for international data centers, resulting in significantly improved operational efficiency and reduced infrastructure overhead."
-            ]
-          },
-          {
-            "text": "High-Performance Architecture & System Optimization",
-            "children": [
-              "Achieved a **99% improvement** in API response time by leading cross-team diagnostic initiatives; utilized database profiling to redesign index architectures and optimize complex query logic.",
-              "Eliminated API bottlenecks by implementing Kafka as an asynchronous messaging layer, transforming response times from 3 minutes to near real-time (**99%+ latency reduction**)."
-            ]
-          },
-          {
-            "text": "Infrastructure Automation & Operational Efficiency",
-            "children": [
-              "Minimized MTTR (Mean Time to Recovery) **from hours to minutes** by developing a unified abstraction layer for multi-vendor switch commands. This interface empowered on-site non-engineering personnel to execute complex network troubleshooting, reducing the dependency on senior engineering intervention and significantly improving SLA.",
-              "Empowered global operations through structured technical training and a unified command abstraction layer, achieving a **100%** autonomous resolution rate for routine infrastructure incidents. This initiative successfully eliminated the need for senior engineering escalation for common tasks, while simultaneously slashing MTTR **from hours to minutes**."
-            ]
-          }
+          "Built high-concurrency immersion cooling infra supporting **100k+ concurrent requests**, achieving **99.5%+ SLA**.",
+          "Architected a data platform handling **150k+ concurrent tasks**, **zero data loss**, **near-zero RTO**; reduced retrieval latency **99%**.",
+          "Automated K8s deployment: provisioning **hours → minutes**, deployment cycles **tens of minutes → seconds**.",
+          "Standardized cross-region data workflows, reducing transfer latency **minutes → seconds**.",
+          "Optimized API & DB: **response times +99%**, async Kafka layer reduced latency **3 mins → near real-time**.",
+          "Infrastructure automation: **MTTR hours → minutes**, routine incident resolution **100% autonomous**."
         ]
       },
       {
@@ -62,14 +33,9 @@
         "company": "PalUp",
         "url": "https://palup.ai",
         "period": "Jun 2022 – Sep 2022",
-        "tech": ["Python", "PyTorch", "Flask"],
+        "tech": [],
         "details": [
-          {
-            "text": "Developed image recognition system for automated end-to-end testing",
-            "children": [
-              "Developed image recognition system for automated end-to-end testing simulating user behavior — established data collection and annotation system with standardized workflow to ensure training data quality, trained YOLO model using PyTorch for UI component detection and classification, deployed via Flask API achieving **95% accuracy** across multi-platform UI elements."
-            ]
-          }
+          "Developed image recognition system using YOLO & Flask, achieving **95% accuracy** across multi-platform UI components."
         ]
       },
       {
@@ -77,44 +43,13 @@
         "company": "AUO",
         "url": "https://www.auo.com",
         "period": "Aug 2020 – May 2022",
-        "tech": ["Python", "Flask","JS", "DevOps"],
+        "tech": [],
         "details": [
-          {
-            "text": "Chiller Power Optimization System",
-            "children": [
-              "Developed chiller power optimization system — analyzed motor load patterns during cooling cycles, optimized motor frequency control strategy through machine learning to reduce energy consumption costs, developed web interface for multi-site deployment."
-            ]
-          },
-          {
-            "text": "Infrastructure Management",
-            "children": [
-              "Managed Linux server infrastructure and PostgreSQL/MySQL databases ensuring stable operation of ML SaaS platform."
-            ]
-          },
-          {
-            "text": "Established a DevOps and agile development culture",
-            "children": [
-              "Led agile transformation initiative implementing Kanban workflow and GitLab CI/CD pipelines to improve team development efficiency.",
-              "Conducted hands-on Git workflow training."
-            ]
-          }
+          "Designed and automated smart factory logistics systems using Python, PostgreSQL, and CI/CD to optimize manufacturing workflows."
         ]
       }
     ],
-    "earlierRoles": [
-      {
-        "title": "Software Engineer Intern",
-        "company": "College Admissions Committee",
-        "url": "https://www.cac.edu.tw/cacportal/index.php",
-        "period": "Feb 2019 – Apr 2020"
-      },
-      {
-        "title": "Software Engineer Intern",
-        "company": "awoo Intelligence",
-        "url": "https://www.awoo.ai",
-        "period": "Feb 2017 – Sep 2017"
-      }
-    ],
+    "earlierRoles": [],
     "sections": {
       "education": "Education",
       "experience": "Experience",
@@ -123,7 +58,7 @@
   },
   "zh": {
     "name": "李政勳",
-    "tagline": "資深後端工程師 / 具備強大基礎架構與 SRE 能力",
+    "tagline": "資深後端工程師|SRE|DevOps",
     "email": "jamesli@csie.io",
     "summary": [
       "高效能系統架構師，擁有 **5 年以上**雲原生 SaaS 與資料中心自動化設計經驗。成功將系統擴展至 **100k+ QPS**，達成 **99.5%+ SLA**。優化數據檢索與部署延遲**從 30+ 分鐘降至 <2 秒**。精通 Python、Azure、K8s，擁有**零資料遺失與近零 RTO** 的實戰經驗。運用現代 AI 輔助工具加速開發，同時維持程式碼品質與系統可靠性。"
@@ -131,8 +66,7 @@
     "education": {
       "school": "國立中正大學",
       "degrees": [
-        { "title": "資訊工程研究所碩士", "year": "2018 – 2020" },
-        { "title": "資訊工程學系學士", "year": "2014 – 2018" }
+        { "title": "資訊工程碩士 & 學士", "year": "2014 – 2020" }
       ]
     },
     "experience": [
@@ -143,40 +77,12 @@
         "period": "2022/10 – 迄今",
         "tech": ["Python", "PostgreSQL", "DevOps", "K8s", "Kafka", "Azure"],
         "details": [
-          {
-            "text": "浸沒式冷卻基礎設施測試平台",
-            "children": [
-              "共同設計並開發高並發浸沒式冷卻測試基礎設施，為全球資料中心提供服務，將系統擴展至支援 **100k+** 峰值並發請求。透過 **K8s Ingress/Load Balancers**、**Gunicorn worker 調校**，以及使用 **PgBouncer** 和複雜的**查詢優化**進行資料庫層級增強，優化系統效能與資料庫效率，確保 **99.5%+** SLA。"
-            ]
-          },
-          {
-            "text": "資料中心數據管理系統",
-            "children": [
-              "架構高並發資料平台，支援 **150k+** 同時進行的任務，達成**零資料遺失**。實作狀態機驅動的生命週期管理系統，實現**近零 RTO**（Recovery Time Objective），允許自動狀態同步，並在電力或網路故障後立即無縫恢復任務。將資料檢索延遲從約 30 分鐘優化至 1-2 秒 —— **99% 的存取時間縮減**，同時維持 **99.5%+ SLA** 及全球資料中心營運的高可用性。"
-            ]
-          },
-          {
-            "text": "雲端基礎設施與 DevOps",
-            "children": [
-              "透過使用 Azure Front Door（CDN）和 Blob Storage 架構自動化套件交付系統，有效繞過內部 apt 套件庫的區域網路限制，將 K8s 建置時間**從數小時縮短至數分鐘**。",
-              "**消除單點故障**（SPOF）並優化全球部署流程，從自行託管的 registry 遷移至 Azure Container Registry（ACR）。此策略性遷移結合優化的快取與 CI/CD 工作流程，將部署週期**從數十分鐘縮短至數秒**，顯著加速關鍵服務的全球交付。",
-              "透過設計整合的 Azure Blob Storage 工具標準化跨區域資料工作流程，**將資料傳輸延遲從數分鐘縮短至數秒**。優化國際資料中心高速效能與雲端出口成本之間的平衡，顯著改善營運效率並降低基礎設施開銷。"
-            ]
-          },
-          {
-            "text": "高效能架構與系統優化",
-            "children": [
-              "透過領導跨團隊診斷工作，在 API 響應時間上達成 **99% 的改善**；運用資料庫分析重新設計索引架構並優化複雜查詢邏輯。",
-              "透過實作 Kafka 作為非同步訊息層，消除 API 瓶頸，將響應時間從 3 分鐘轉變為近乎即時（**99%+ 延遲降低**）。"
-            ]
-          },
-          {
-            "text": "基礎設施自動化與營運效率",
-            "children": [
-              "透過開發多廠商交換器指令的統一抽象層，將 MTTR（平均恢復時間）**從數小時降低至數分鐘**。此介面賦能現場非工程人員執行複雜的網路故障排除，降低對資深工程師介入的依賴，顯著改善 SLA。",
-              "透過結構化技術培訓與統一指令抽象層賦能全球營運，對於例行基礎設施事件達成 **100%** 自主解決率。此計畫成功消除一般任務對資深工程師升級的需求，同時將 MTTR **從數小時大幅縮短至數分鐘**。"
-            ]
-          }
+          "建置高並發浸沒式冷卻基礎設施，支援 **100k+ 並發請求**，達成 **99.5%+ SLA**。",
+          "架構資料平台處理 **150k+ 並發任務**，**零資料遺失**、**近零 RTO**；檢索延遲降低 **99%**。",
+          "自動化 K8s 部署：建置時間**從數小時縮短至數分鐘**，部署週期**從數十分鐘縮短至數秒**。",
+          "標準化跨區域資料工作流程，傳輸延遲**從數分鐘降至數秒**。",
+          "優化 API 與資料庫：**響應時間提升 99%**，非同步 Kafka 層將延遲**從 3 分鐘降至近乎即時**。",
+          "基礎設施自動化：**MTTR 從數小時降至數分鐘**，例行事件解決率 **100% 自主化**。"
         ]
       },
       {
@@ -184,14 +90,9 @@
         "company": "PalUp",
         "url": "https://palup.ai",
         "period": "2022/06 – 2022/09",
-        "tech": ["Python", "PyTorch", "Flask"],
+        "tech": [],
         "details": [
-          {
-            "text": "用於端到端測試的影像辨識系統",
-            "children": [
-              "開發影像辨識系統用於自動化端到端測試，模擬使用者行為 — 建立資料搜集與標注系統，制定標準化工作流程確保訓練資料品質，使用 PyTorch 訓練 YOLO 模型進行 UI 元件偵測與分類，透過 Flask API 部署達成 **95% 準確率**，可識別跨平台 UI 元件。"
-            ]
-          }
+          "使用 YOLO 與 Flask 開發影像辨識系統，跨平台 UI 元件辨識準確率達 **95%**。"
         ]
       },
       {
@@ -199,44 +100,13 @@
         "company": "友達光電",
         "url": "https://www.auo.com",
         "period": "2020/08 – 2022/05",
-        "tech": ["Python", "Flask", "JS", "DevOps"],
+        "tech": [],
         "details": [
-          {
-            "text": "冰水主機用電最佳化系統",
-            "children": [
-              "開發冰水主機用電最佳化系統 — 分析冷卻過程中的馬達負載模式，透過機器學習技術優化馬達頻率控制策略降低能耗成本，開發 web 介面供多廠區部署使用。"
-            ]
-          },
-          {
-            "text": "基礎設施維運管理",
-            "children": [
-              "負責 Linux 伺服器架設與維運、PostgreSQL/MySQL 資料庫管理，確保 ML SaaS 平台穩定運作"
-            ]
-          },
-          {
-            "text": "建立 DevOps 與敏捷開發文化",
-            "children": [
-              "主導敏捷開發文化導入，建立看板系統與 GitLab CI/CD 流程，提升團隊開發效率",
-              "舉辦 Git 工作流程實務訓練"
-            ]
-          }
+          "使用 Python、PostgreSQL 和 CI/CD 設計並自動化智慧工廠物流系統，優化製造流程。"
         ]
       }
     ],
-    "earlierRoles": [
-      {
-        "title": "軟體工程實習生",
-        "company": "大學甄選入選委員會",
-        "url": "https://www.cac.edu.tw/cacportal/index.php",
-        "period": "2019/02 – 2020/04"
-      },
-      {
-        "title": "軟體工程實習生",
-        "company": "awoo 阿物科技",
-        "url": "https://www.awoo.ai",
-        "period": "2017/02 – 2017/09"
-      }
-    ],
+    "earlierRoles": [],
     "sections": {
       "education": "學歷",
       "experience": "工作經歷",
