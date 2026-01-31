@@ -208,6 +208,12 @@
             border-top: 1px solid var(--border);
         }
 
+        /* Bold text styling */
+        strong {
+            font-weight: 700;
+            color: #f4f4f7;
+        }
+
         @keyframes fadeIn {
             to { opacity: 1; }
         }
@@ -431,6 +437,7 @@
         /* Nested detail items */
         .detail-with-children {
             position: relative;
+            color: #f4f4f7;
         }
 
         .expand-toggle {
@@ -499,6 +506,7 @@
             opacity: 0.9;
             position: relative;
             list-style: none;
+            color: var(--muted);
         }
 
         .nested-details .nested-item::before {
@@ -614,6 +622,14 @@
             animation: fadeIn 0.6s ease 1s forwards;
         }
 
+        /* Header controls container */
+        .header-controls {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+            align-self: flex-start;
+        }
+
         /* Language toggle */
         .lang-toggle {
             display: flex;
@@ -621,8 +637,6 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
-            margin-left: auto;
-            align-self: flex-start;
             opacity: 0;
             animation: fadeIn 0.6s ease 0.3s forwards;
         }
@@ -645,6 +659,39 @@
         .lang-btn.active {
             background: var(--accent-dim);
             color: var(--accent);
+        }
+
+        /* PDF download button */
+        .pdf-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 12px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.4s forwards;
+        }
+
+        .pdf-btn:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .pdf-btn svg {
+            transition: transform 0.2s ease;
+        }
+
+        .pdf-btn:hover svg {
+            transform: translateY(1px);
         }
 
         /* Cursor glow effect */
@@ -688,8 +735,9 @@
             .timeline { padding-left: 20px; }
             .job::before { left: -25px; }
             .orb { opacity: 0.2; }
-            .lang-toggle { position: absolute; top: 0; right: 0; }
+            .header-controls { position: absolute; top: 0; right: 0; flex-direction: column; gap: 6px; }
             .lang-btn { padding: 6px 10px; font-size: 11px; }
+            .pdf-btn { padding: 6px 10px; font-size: 11px; }
             .header-top { position: relative; }
         }
     </style>
@@ -714,21 +762,23 @@
                         <a id="email-link" href=""></a>
                     </div>
                 </div>
-                <div class="lang-toggle">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="zh">中文</button>
+                <div class="header-controls">
+                    <div class="lang-toggle">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="zh">中文</button>
+                    </div>
+                    <a href="james_detailed.pdf" class="pdf-btn" download>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        PDF
+                    </a>
                 </div>
             </div>
             <div class="summary-container" id="summary-container"></div>
         </header>
-
-        <section data-animate id="education-section">
-            <div class="section-header">
-                <span class="section-title" id="education-title"></span>
-                <span class="section-line"></span>
-            </div>
-            <div class="education-card" id="education-card"></div>
-        </section>
 
         <section data-animate id="experience-section">
             <div class="section-header">
@@ -738,12 +788,12 @@
             <div class="timeline" id="timeline"></div>
         </section>
 
-        <section data-animate id="earlier-roles-section">
+        <section data-animate id="education-section">
             <div class="section-header">
-                <span class="section-title" id="earlier-roles-title"></span>
+                <span class="section-title" id="education-title"></span>
                 <span class="section-line"></span>
             </div>
-            <div class="minor-roles" id="minor-roles"></div>
+            <div class="education-card" id="education-card"></div>
         </section>
 
         <footer></footer>
@@ -769,6 +819,11 @@
         function render() {
             const data = contentData[currentLang];
 
+            // Helper function to convert **text** to <strong>text</strong>
+            function formatText(text) {
+                return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            }
+
             // Header
             document.getElementById('name').textContent = data.name;
             document.getElementById('tagline').textContent = data.tagline;
@@ -778,13 +833,12 @@
             // Summary
             const summaryContainer = document.getElementById('summary-container');
             summaryContainer.innerHTML = data.summary.map(text =>
-                `<p class="summary">${text}</p>`
+                `<p class="summary">${formatText(text)}</p>`
             ).join('');
 
             // Section titles
             document.getElementById('education-title').textContent = data.sections.education;
             document.getElementById('experience-title').textContent = data.sections.experience;
-            document.getElementById('earlier-roles-title').textContent = data.sections.earlierRoles;
 
             // Education
             const educationCard = document.getElementById('education-card');
@@ -795,70 +849,31 @@
                 ).join('')}
             `;
 
-            // Function to render detail items (supports nested structure with unlimited depth)
-            function renderDetailItem(detail, index, level = 1) {
+            // Function to render detail items (simple 2-level structure, always expanded)
+            function renderDetailItem(detail) {
+                // Simple string item (backwards compatibility)
                 if (typeof detail === 'string') {
-                    return `<li>${detail}</li>`;
+                    return `<li>${formatText(detail)}</li>`;
                 }
 
+                // Object with children - render as 2-level structure
                 if (detail.children && detail.children.length > 0) {
-                    const childrenHtml = detail.children.map((child, childIdx) => {
-                        if (typeof child === 'string') {
-                            return `<li class="nested-item nested-level-${level + 1}">${child}</li>`;
-                        }
-                        // Recursive case: child has its own children
-                        if (child.children && child.children.length > 0) {
-                            return `
-                                <li class="nested-item nested-level-${level + 1} detail-with-children">
-                                    ${child.text}
-                                    <span class="expand-toggle" data-index="${index}-${childIdx}">
-                                        <span class="toggle-icon">▶</span>
-                                        <span class="toggle-text">details</span>
-                                    </span>
-                                    <ul class="nested-details">
-                                        ${child.children.map((grandchild, gcIdx) =>
-                                            renderDetailItem(grandchild, `${index}-${childIdx}-${gcIdx}`, level + 2)
-                                        ).join('')}
-                                    </ul>
-                                </li>
-                            `;
-                        }
-                        return `<li class="nested-item nested-level-${level + 1}">${child.text || child}</li>`;
+                    const childrenHtml = detail.children.map(child => {
+                        return `<li class="nested-item">${formatText(child)}</li>`;
                     }).join('');
 
                     return `
                         <li class="detail-with-children">
-                            ${detail.text}
-                            <span class="expand-toggle" data-index="${index}">
-                                <span class="toggle-icon">▶</span>
-                                <span class="toggle-text">details</span>
-                            </span>
-                            <ul class="nested-details">
+                            ${formatText(detail.text)}
+                            <ul class="nested-details expanded">
                                 ${childrenHtml}
                             </ul>
                         </li>
                     `;
                 }
 
-                return `<li>${detail.text}</li>`;
-            }
-
-            // Function to add toggle event listeners
-            function addToggleListeners() {
-                document.querySelectorAll('.expand-toggle').forEach(toggle => {
-                    toggle.addEventListener('click', function() {
-                        this.classList.toggle('expanded');
-                        const nestedDetails = this.nextElementSibling;
-                        if (nestedDetails && nestedDetails.classList.contains('nested-details')) {
-                            nestedDetails.classList.toggle('expanded');
-                        }
-                        // Update text
-                        const textSpan = this.querySelector('.toggle-text');
-                        if (textSpan) {
-                            textSpan.textContent = this.classList.contains('expanded') ? 'hide' : 'details';
-                        }
-                    });
-                });
+                // Object without children
+                return `<li>${formatText(detail.text)}</li>`;
             }
 
             // Experience
@@ -873,22 +888,11 @@
                         ${job.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                     </div>
                     <ul class="job-details">
-                        ${job.details.map((d, idx) => renderDetailItem(d, idx)).join('')}
+                        ${job.details.map(d => renderDetailItem(d)).join('')}
                     </ul>
                 </div>
             `).join('');
 
-            // Add event listeners for toggle buttons
-            addToggleListeners();
-
-            // Earlier roles
-            const minorRoles = document.getElementById('minor-roles');
-            minorRoles.innerHTML = data.earlierRoles.map(role => `
-                <div class="minor-role">
-                    <div class="job-title">${role.title} @ <a href="${role.url}" class="company" target="_blank" rel="noopener">${role.company}</a></div>
-                    <div class="job-period">${role.period}</div>
-                </div>
-            `).join('');
         }
 
         // Cursor glow effect

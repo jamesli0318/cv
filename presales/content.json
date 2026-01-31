@@ -1,19 +1,25 @@
 {
   "en": {
     "name": "James Li",
-    "tagline": "Senior Backend Engineer",
+    "tagline": "Senior Backend Engineer with Strong Infrastructure/SRE Capability.",
     "email": "jamesli@csie.io",
     "summary": [
       "Solution-oriented engineer bridging technical implementation and business requirements.",
       "Proven track record in leading projects from requirements gathering to production, delivering automation systems and SaaS platforms that reduce operational costs.",
       "Proficient in Python/K8s/Azure with strong capability in system architecture design and cross-team collaboration.",
-      "Experienced in rapid prototyping and solution validation, with hands-on understanding of how AI accelerates both development workflows and business value creation." 
+      "Experienced in rapid prototyping and solution validation, with hands-on understanding of how AI accelerates both development workflows and business value creation."
     ],
     "education": {
       "school": "National Chung Cheng University",
       "degrees": [
-        { "title": "M.S., Computer Science and Information Engineering", "year": "2018 – 2020" },
-        { "title": "B.S., Computer Science and Information Engineering", "year": "2014 – 2018" }
+        {
+          "title": "M.S., Computer Science and Information Engineering",
+          "year": "2018 – 2020"
+        },
+        {
+          "title": "B.S., Computer Science and Information Engineering",
+          "year": "2014 – 2018"
+        }
       ]
     },
     "experience": [
@@ -22,52 +28,47 @@
         "company": "Wiwynn",
         "url": "https://www.wiwynn.com",
         "period": "Oct 2022 – Present",
-        "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
+        "tech": [
+          "Python",
+          "PostgreSQL",
+          "DevOps",
+          "K8s",
+          "Kafka",
+          "Azure"
+        ],
         "details": [
           {
-            "text": "Building automation systems and SaaS for Wiwynn's Worldwide site data centers, reducing operational costs and achieving 99.5% SLA high availability",
+            "text": "Immersion Cooling Infrastructure Test Infra",
             "children": [
-              {
-                "text": "Data Center Log Archiving System",
-                "children": [
-                  "Designed and developed a cloud native based datacenter-grade test data management platform integrating Django REST Framework, PostgreSQL, Apache NiFi, and Azure cloud services, implementing end-to-end automated workflows from distributed storage monitoring, data compression and encryption, integrity validation to redundant backup. The system employs state machine tracking for data lifecycle management, with idempotent retry mechanisms and soft-delete buffering to ensure data consistency and automatic recovery under failure scenarios such as power outages and network disruptions. Achieved high availability architecture and disaster recovery capabilities through proactive health monitoring, multi-region replication, and automated failover mechanisms, ensuring data durability and rapid retrieval of critical test assets."
-                ]
-              },
-              {
-                "text": "Azure Cloud Infrastructure",
-                "children": [
-                  "Designed Azure Blob Storage integration tool optimizing file transfer performance and cost balance across international data centers — established standardized workflows and conducted team onboarding training.",
-                  "Led migration from self-hosted registry to Azure Container Registry — eliminated single point of failure, improved global deployment speed, managed migration strategy and technical documentation.",
-                  "Configured Azure Front Door to serve self-maintained packages from Azure Blob Storage with automated collection tooling to overcome apt package management constraints — reduced K8s cluster provisioning time by several hours leveraging Azure's regional CDN performance.",
-                  "* Designed flexible Azure DevOps pipeline framework supporting multi-site customization requirements and accelerating CI/CD workflows."
-                ]
-              },
-              {
-                "text": "Performance Optimization",
-                "children": [
-                  "Collaborated cross-team to diagnose API performance bottlenecks using database profiling tools — redesigned index architecture and optimized query logic, achieving 99% improvement in API response time.",
-                  "Implemented Kafka as asynchronous communication layer between internal systems and third-party services with custom-developed connectors — decoupled system dependencies and improved fault tolerance, ensuring core business continuity during third-party service outages."
-                ]
-              },
-              {
-                "text": "Network Debug Tool",
-                "children": [
-                  "Led team to develop abstraction layer for multi-vendor switch commands with unified interface for heterogeneous network equipment operations — trained on-site personnel for basic troubleshooting capabilities, reducing incident recovery time and improving system availability."
-                ]
-              },
-              {
-                "text": "Immersion Cooling Infrastructure",
-                "children": [
-                  "Engineered automated testing solutions for immersion cooling infrastructure — served as technical liaison between internal teams and external vendors, designed API specifications for system integration, and delivered multi-system coordination framework."
-                ]
-              }
+              "Co-designed and developed a high-concurrency immersion cooling test infrastructure for global data centers, scaling the system to support **100k+** peak concurrent requests. Optimized system performance and database efficiency through **K8s Ingress/Load Balancers**, **Gunicorn worker tuning**, and database layer enhancements using **PgBouncer** and complex **query optimization**, ensuring **99.5%+** SLA."
             ]
           },
           {
-            "text": "Prototyped Omniverse-based digital twin for production line monitoring — delivered real-time 3D visualization production line and SaaS tool for pre-production simulation.",
+            "text": "Data Center Data Management System",
             "children": [
-              "Developed real-time synchronization system between physical robotic arms and digital twin using Isaac Sim with customized Nvidia extensions, Connect SDK, and web viewer — optimized data sync frequency and arm parameters for smooth operation visualization.",
-              "Led team to build Omniverse-based production line simulation web tool enabling cycle time analysis and collision detection through configurable robotic arm actions and conveyor speeds — validated production scenarios prior to physical deployment."
+              "Architected a high-concurrency data platform supporting **150k+** simultaneous tasks with **zero data loss**. Implemented a state-machine driven lifecycle management system that enables **near-zero RTO** (Recovery Time Objective), allowing automated state synchronization and seamless task resumption immediately after power or network failures. Optimized data retrieval latency from ~30 minutes to 1-2 seconds —a **99% reduction** in access time, while maintaining **99.5%+ SLA** and high availability across global data center operations."
+            ]
+          },
+          {
+            "text": "Cloud Infrastructure & DevOps",
+            "children": [
+              "Reduced K8s provisioning time **from hours to minutes** by architecting an automated package delivery system using Azure Front Door (CDN) and Blob Storage, effectively bypassing regional network constraints for internal apt repositories.",
+              "**Eliminated Single Point of Failure** (SPOF) and optimized the global deployment pipeline by migrating from self-hosted registries to Azure Container Registry (ACR). This strategic migration, combined with optimized caching and CI/CD workflows, reduced deployment cycles **from tens of minutes to mere seconds**, significantly accelerating the global delivery of critical services.",
+              "Standardized cross-region data workflows by designing an integrated Azure Blob Storage tool, **reducing data transfer latency from several minutes to just seconds**. Optimized the equilibrium between high-speed performance and cloud egress costs for international data centers, resulting in significantly improved operational efficiency and reduced infrastructure overhead."
+            ]
+          },
+          {
+            "text": "High-Performance Architecture & System Optimization",
+            "children": [
+              "Achieved a **99% improvement** in API response time by leading cross-team diagnostic initiatives; utilized database profiling to redesign index architectures and optimize complex query logic.",
+              "Eliminated API bottlenecks by implementing Kafka as an asynchronous messaging layer, transforming response times from 3 minutes to near real-time (**99%+ latency reduction**)."
+            ]
+          },
+          {
+            "text": "Infrastructure Automation & Operational Efficiency",
+            "children": [
+              "Minimized MTTR (Mean Time to Recovery) **from hours to minutes** by developing a unified abstraction layer for multi-vendor switch commands. This interface empowered on-site non-engineering personnel to execute complex network troubleshooting, reducing the dependency on senior engineering intervention and significantly improving SLA.",
+              "Empowered global operations through structured technical training and a unified command abstraction layer, achieving a **100%** autonomous resolution rate for routine infrastructure incidents. This initiative successfully eliminated the need for senior engineering escalation for common tasks, while simultaneously slashing MTTR **from hours to minutes**."
             ]
           }
         ]
@@ -77,12 +78,16 @@
         "company": "PalUp",
         "url": "https://palup.ai",
         "period": "Jun 2022 – Sep 2022",
-        "tech": ["Python", "PyTorch", "Flask"],
+        "tech": [
+          "Python",
+          "PyTorch",
+          "Flask"
+        ],
         "details": [
           {
             "text": "Developed image recognition system for automated end-to-end testing",
             "children": [
-              "Developed image recognition system for automated end-to-end testing simulating user behavior — established data collection and annotation system with standardized workflow to ensure training data quality, trained YOLO model using PyTorch for UI component detection and classification, deployed via Flask API achieving 95% accuracy across multi-platform UI elements."
+              "Developed image recognition system for automated end-to-end testing simulating user behavior — established data collection and annotation system with standardized workflow to ensure training data quality, trained YOLO model using PyTorch for UI component detection and classification, deployed via Flask API achieving **95% accuracy** across multi-platform UI elements."
             ]
           }
         ]
@@ -92,12 +97,17 @@
         "company": "AUO",
         "url": "https://www.auo.com",
         "period": "Aug 2020 – May 2022",
-        "tech": ["Python", "Flask","JS", "DevOps"],
+        "tech": [
+          "Python",
+          "Flask",
+          "JS",
+          "DevOps"
+        ],
         "details": [
           {
             "text": "Chiller Power Optimization System",
             "children": [
-              "Developed chiller power optimization system — analyzed motor load patterns during cooling cycles, optimized motor frequency control strategy through machine learning to reduce energy consumption costs."
+              "Developed chiller power optimization system — analyzed motor load patterns during cooling cycles, optimized motor frequency control strategy through machine learning to reduce energy consumption costs, developed web interface for multi-site deployment."
             ]
           },
           {
@@ -138,18 +148,25 @@
   },
   "zh": {
     "name": "李政勳",
-    "tagline": "資深後端工程師",
+    "tagline": "資深後端工程師 / 具備強大基礎架構與 SRE 能力",
     "email": "jamesli@csie.io",
     "summary": [
       "以解決方案為導向的工程師，擅長在技術實作與商業需求之間搭起橋樑。",
-      "具備從需求蒐集到正式上線的專案領導實績，成功交付自動化系統與 SaaS 平台，有效降低營運成本。熟悉 Python／K8s／Azure，在系統架構設計與跨團隊協作方面具備強大能力。",
+      "具備從需求蒐集到正式上線的專案領導實績，成功交付自動化系統與 SaaS 平台，有效降低營運成本。",
+      "熟悉 Python/K8s/Azure，在系統架構設計與跨團隊協作方面具備強大能力。",
       "擅長快速原型開發與解決方案驗證，並具備實務層面的 AI 理解，能加速開發流程並創造實際的商業價值。"
     ],
     "education": {
       "school": "國立中正大學",
       "degrees": [
-        { "title": "資訊工程研究所碩士", "year": "2018 – 2020" },
-        { "title": "資訊工程學系學士", "year": "2014 – 2018" }
+        {
+          "title": "資訊工程研究所碩士",
+          "year": "2018 – 2020"
+        },
+        {
+          "title": "資訊工程學系學士",
+          "year": "2014 – 2018"
+        }
       ]
     },
     "experience": [
@@ -158,52 +175,47 @@
         "company": "緯穎科技",
         "url": "https://www.wiwynn.com",
         "period": "2022/10 – 迄今",
-        "tech": ["Python", "DRF", "PostgreSQL", "Azure", "K8s", "Kafka", "Omniverse"],
+        "tech": [
+          "Python",
+          "PostgreSQL",
+          "DevOps",
+          "K8s",
+          "Kafka",
+          "Azure"
+        ],
         "details": [
           {
-            "text": "建置自動化系統與 SaaS 平台，服務緯穎全球資料中心，降低營運成本並達成 99.5% SLA 高可用性",
+            "text": "浸沒式冷卻基礎設施測試平台",
             "children": [
-              {
-                "text": "資料中心日誌歸檔系統",
-                "children": [
-                  "設計並開發基於雲原生架構的資料中心級測試數據管理平台，整合 Django REST Framework、PostgreSQL、Apache NiFi 及 Azure 雲端服務，實現從分散式儲存監控、數據壓縮加密、完整性驗證到冗餘備份的端到端自動化工作流程。系統採用狀態機追蹤數據生命週期管理，透過冪等重試機制與軟刪除緩衝確保數據一致性，並在斷電、網路中斷等故障情境下自動恢復。透過主動健康監控、多區域複製及自動故障轉移機制，實現高可用性架構與災難復原能力，確保數據持久性與關鍵測試資產的快速檢索。"
-                ]
-              },
-              {
-                "text": "Azure 雲端基礎設施",
-                "children": [
-                  "設計 Azure Blob Storage 整合工具，優化跨國資料中心間的檔案傳輸效能與成本平衡，建立標準化作業流程並完成團隊導入訓練。",
-                  "主導從 self-hosted registry 遷移至 Azure Container Registry — 消除單點故障風險，提升全球部署速度，負責遷移策略規劃與技術文件製作。",
-                  "配置 Azure Front Door 從 Azure Blob Storage 提供自維護套件，搭配自動化收集工具解決 apt 套件管理限制 — 利用 Azure 區域 CDN 將 K8s cluster 建置時間縮短數小時。",
-                  "設計彈性化 Azure DevOps pipeline 框架，支援多工廠客製化需求，加速 CI/CD 流程。"
-                ]
-              },
-              {
-                "text": "效能最佳化",
-                "children": [
-                  "協助跨團隊診斷 API 效能瓶頸，透過資料庫分析工具定位問題，重新設計索引結構並優化查詢邏輯 — 將 API 響應速度提升 99%。",
-                  "建立 Kafka 作為內部系統與第三方服務間的非同步通訊層，自行開發內部 connector — 解耦系統依賴、提升容錯能力，確保第三方服務異常時不影響核心業務流程。"
-                ]
-              },
-              {
-                "text": "網路除錯工具",
-                "children": [
-                  "領導團隊開發多廠牌 switch 指令抽象層，提供統一介面操作異構網路設備，並建立現場人員培訓計畫 — 使現場團隊具備基礎故障排除能力，縮短故障恢復時間並提升系統可用性。"
-                ]
-              },
-              {
-                "text": "浸沒式冷卻基礎設施",
-                "children": [
-                  "開發浸沒式冷卻基礎設施自動化測試方案 — 擔任內部團隊與外部廠商間的技術溝通橋樑，設計系統整合 API 規範，交付多系統協調框架。"
-                ]
-              }
+              "共同設計並開發高並發浸沒式冷卻測試基礎設施，為全球資料中心提供服務，將系統擴展至支援 **100k+** 峰值並發請求。透過 **K8s Ingress/Load Balancers**、**Gunicorn worker 調校**，以及使用 **PgBouncer** 和複雜的**查詢優化**進行資料庫層級增強，優化系統效能與資料庫效率，確保 **99.5%+** SLA。"
             ]
           },
           {
-            "text": "原型開發 Omniverse 數位孿生產線監控及模擬系統",
+            "text": "資料中心數據管理系統",
             "children": [
-              "使用 Isaac Sim 結合客製化 Nvidia extension、Connect SDK 及 web viewer 開發實體機械手臂與數位孿生間的即時同步系統 — 優化資料同步頻率與手臂參數，實現流暢的運作視覺化。",
-              "領導團隊開發基於 Omniverse 的生產線模擬工具，透過可配置的機械手臂動作與輸送帶轉速進行 cycle time 分析與碰撞偵測 — 於實體部署前驗證生產情境。"
+              "架構高並發資料平台，支援 **150k+** 同時進行的任務，達成**零資料遺失**。實作狀態機驅動的生命週期管理系統，實現**近零 RTO**（Recovery Time Objective），允許自動狀態同步，並在電力或網路故障後立即無縫恢復任務。將資料檢索延遲從約 30 分鐘優化至 1-2 秒 —— **99% 的存取時間縮減**，同時維持 **99.5%+ SLA** 及全球資料中心營運的高可用性。"
+            ]
+          },
+          {
+            "text": "雲端基礎設施與 DevOps",
+            "children": [
+              "透過使用 Azure Front Door（CDN）和 Blob Storage 架構自動化套件交付系統，有效繞過內部 apt 套件庫的區域網路限制，將 K8s 建置時間**從數小時縮短至數分鐘**。",
+              "**消除單點故障**（SPOF）並優化全球部署流程，從自行託管的 registry 遷移至 Azure Container Registry（ACR）。此策略性遷移結合優化的快取與 CI/CD 工作流程，將部署週期**從數十分鐘縮短至數秒**，顯著加速關鍵服務的全球交付。",
+              "透過設計整合的 Azure Blob Storage 工具標準化跨區域資料工作流程，**將資料傳輸延遲從數分鐘縮短至數秒**。優化國際資料中心高速效能與雲端出口成本之間的平衡，顯著改善營運效率並降低基礎設施開銷。"
+            ]
+          },
+          {
+            "text": "高效能架構與系統優化",
+            "children": [
+              "透過領導跨團隊診斷工作，在 API 響應時間上達成 **99% 的改善**；運用資料庫分析重新設計索引架構並優化複雜查詢邏輯。",
+              "透過實作 Kafka 作為非同步訊息層，消除 API 瓶頸，將響應時間從 3 分鐘轉變為近乎即時（**99%+ 延遲降低**）。"
+            ]
+          },
+          {
+            "text": "基礎設施自動化與營運效率",
+            "children": [
+              "透過開發多廠商交換器指令的統一抽象層，將 MTTR（平均恢復時間）**從數小時降低至數分鐘**。此介面賦能現場非工程人員執行複雜的網路故障排除，降低對資深工程師介入的依賴，顯著改善 SLA。",
+              "透過結構化技術培訓與統一指令抽象層賦能全球營運，對於例行基礎設施事件達成 **100%** 自主解決率。此計畫成功消除一般任務對資深工程師升級的需求，同時將 MTTR **從數小時大幅縮短至數分鐘**。"
             ]
           }
         ]
@@ -213,12 +225,16 @@
         "company": "PalUp",
         "url": "https://palup.ai",
         "period": "2022/06 – 2022/09",
-        "tech": ["Python", "PyTorch", "Flask"],
+        "tech": [
+          "Python",
+          "PyTorch",
+          "Flask"
+        ],
         "details": [
           {
             "text": "用於端到端測試的影像辨識系統",
             "children": [
-              "開發影像辨識系統用於自動化端到端測試，模擬使用者行為，建立資料搜集與標注系統，制定標注流程規範確保訓練資料品質，使用 PyTorch 訓練 YOLO 模型進行 UI 元件偵測與分類，透過 Flask API 提供服務達成 97% 準確率，可識別跨平台 UI 元件"
+              "開發影像辨識系統用於自動化端到端測試，模擬使用者行為 — 建立資料搜集與標注系統，制定標準化工作流程確保訓練資料品質，使用 PyTorch 訓練 YOLO 模型進行 UI 元件偵測與分類，透過 Flask API 部署達成 **95% 準確率**，可識別跨平台 UI 元件。"
             ]
           }
         ]
@@ -228,12 +244,17 @@
         "company": "友達光電",
         "url": "https://www.auo.com",
         "period": "2020/08 – 2022/05",
-        "tech": ["Python", "Flask", "JS", "DevOps"],
+        "tech": [
+          "Python",
+          "Flask",
+          "JS",
+          "DevOps"
+        ],
         "details": [
           {
             "text": "冰水主機用電最佳化系統",
             "children": [
-              "開發冰水主機用電最佳化系統 — 分析冷卻過程中的馬達負載模式，透過機器學習技術優化馬達頻率控制策略，降低能耗成本，開發web 介面供多廠區部署使用"
+              "開發冰水主機用電最佳化系統 — 分析冷卻過程中的馬達負載模式，透過機器學習技術優化馬達頻率控制策略降低能耗成本，開發 web 介面供多廠區部署使用。"
             ]
           },
           {
